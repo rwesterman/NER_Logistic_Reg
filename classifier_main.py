@@ -6,6 +6,9 @@ import time
 from nerdata import *
 from utils import *
 from optimizers import *
+import re
+from collections import defaultdict
+from features import *
 
 import numpy as np
 
@@ -88,9 +91,18 @@ class PersonClassifier(object):
 
 def train_classifier(ner_exs):
     # Todo: Implement a training method here, follow steps below:
-    for ex in ner_exs:
-        create_features(ex)
+    indexer = Indexer()
+    indexer = init_features(indexer)
+    optimizer = SGDOptimizer(np.random.random(len(indexer)), .1)
 
+    for ex in ner_exs:
+
+        feature_dict = get_applicable_feats(ex.tokens)
+        scores_words = get_score_from_feats(feature_dict, indexer, weights)
+
+        for score, word in scores_words:
+            sig_score = sigmoid(score)
+            print("{} has sigmoid of {:.2f}".format(word, sig_score))
 
     # use counter to keep track of gradient (?)
     # can do vector implementation, using dot product instead of looping over each element (?)
@@ -101,12 +113,15 @@ def train_classifier(ner_exs):
     # Will need to calculate the gradient as well.
     pass
 
-def sigmoid(weights, inputs):
+def sigmoid(z):
     """Implement logistic regression here. Takes two numpy arrays, calculates their dot product,
     and plugs it into sigmoid formula"""
-    z = np.dot(weights, inputs)
+    # z = np.dot(weights, inputs)
     out = np.exp(z)/(1+np.exp(z))
-    print(out)
+    return out
+
+def sigmoid_loss():
+    pass
 
 def evaluate_classifier(exs, classifier):
     num_correct = 0
@@ -175,13 +190,5 @@ def main():
 
 
 if __name__ == '__main__':
-    # main()
-    index = Indexer()
-    print(index)
-    maybe_add_feature([0,1,5], index, True, "Capitalized")
-    print(index)
-    maybe_add_feature([8,10], index, True, "Possessive")
-    print(index.index_of("Capitalized"))
-    print(index.index_of("Possessive"))
-    print(index.get_object(1))
+    main()
 

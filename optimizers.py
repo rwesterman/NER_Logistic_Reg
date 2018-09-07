@@ -30,6 +30,7 @@ class Optimizer(ABC):
 
 
 # SGD optimizer implementation, designed to have the same interface as the Adagrad optimizers
+# Weights are stores in the optimizer for training.
 class SGDOptimizer(Optimizer):
     # init_weights: a numpy array of the correct dimension, usually initialized to 0
     # alpha: step size
@@ -38,6 +39,7 @@ class SGDOptimizer(Optimizer):
         self.alpha = alpha
 
     def apply_gradient_update(self, gradient, batch_size):
+        # Why is gradient a dictionary? Is it a Counter object?
         for i in gradient.keys():
             g = gradient.get_count(i)
             self.weights[i] = self.weights[i] + self.alpha * g

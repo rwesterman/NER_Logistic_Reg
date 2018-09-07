@@ -23,16 +23,6 @@ class Features():
             "4PlusSyl",           # Token has 4+ syllables
             ]
 
-    #     self.feature_dict = self._init_feature_dict()
-    #
-    # def _init_feature_dict(self):
-    #     feature_dict = {"Token": ""}
-    #     for feature in self.feature_list:
-    #         feature_dict[feature] = False
-    #
-    #
-    # def get_empty_feature_dict(self):
-    #     self.feature_dict = True
 
 def init_features(indexer):
     features = Features()
@@ -52,9 +42,6 @@ def get_applicable_feats(sentence):
     :return:
     """
 
-    # TODO: Figure out what to do if a sentence contains the same word twice. Make a new instance? ie bill:[], bill2:[]
-    # Todo: This causes issues of lookup in the next step where a word is polled against dictionary value.
-    # Todo: Might need to separate things so that sentence position isn't included???
     articles = ["the", "that", "this", "an", "a"]
 
     feats_per_word = defaultdict(list)
@@ -136,6 +123,8 @@ def get_score_from_feats(feature_dict, indexer, weights):
     :param feature_dict: Dictionary with keys representing position in sentence, values are lists with first element being the token
     :return: score for each word?
     """
+    scores = []
+    words = []
 
     for position, featureset in feature_dict.items():
         feats = []  # Reset feats list for each new word
@@ -145,10 +134,10 @@ def get_score_from_feats(feature_dict, indexer, weights):
             for i, feature in enumerate(featureset):
                 feats = maybe_add_feature(feats, indexer, False, feature)
 
-            score = score_indexed_features(feats, weights)
-            print("{} has features {}, with score {}".format(featureset[0], feats, score))
-        else:
-            print("{} has no features, and therefore score is 0".format(featureset[0]))
+            scores.append(score_indexed_features(feats, weights))
+            words.append(featureset[0])
+
+    return zip(scores,words)
 
 
 # Todo: Check with prof durrett to see if I can use this
@@ -283,12 +272,10 @@ if __name__ == '__main__':
     # to consider: Do I want negative score values for words that definitely aren't names?
     # Todo: Try making "not capitalized" a feature. This should set the weights heavily negative for this feature
     indexer = Indexer()
-    test = ["Doug","was", "a", "big", "Man"]
-    # print(check_capital(test))
+
     indexer = init_features(indexer)
     weights = np.random.rand(len(indexer))
 
     sentence = "Bill 's four big dogs were named Doug Susan Bill J.R. and Andre3000".split(" ")
     feature_dict = get_applicable_feats(sentence)
-    print(feature_dict)
     get_score_from_feats(feature_dict, indexer, weights)
