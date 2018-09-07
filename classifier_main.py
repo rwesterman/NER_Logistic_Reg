@@ -9,6 +9,7 @@ from optimizers import *
 import re
 from collections import defaultdict
 from features import *
+from pprint import pprint
 
 import numpy as np
 
@@ -63,7 +64,6 @@ class CountBasedPersonClassifier(object):
         else:
             return 0
 
-
 # "Trains" the count-based person classifier by collecting counts over the given examples.
 def train_count_based_binary_classifier(ner_exs):
     pos_counts = Counter()
@@ -83,35 +83,86 @@ class PersonClassifier(object):
     def __init__(self, weights, indexer):
         self.weights = weights
         self.indexer = indexer
+        self.loss = LogisticLoss(self.indexer)
+        self.stop_words = get_stop_words()
+        self.tokens = []
+        self.feature_dict = {}
 
     # Makes a prediction for token at position idx in the given PersonExample
     def predict(self, tokens, idx):
-        raise Exception("Implement me!")
+        # Get the features for the full sentence.
+        # Todo: Look into modifying this if it takes too much time??
+        # Only create features for the sentence when the first token is accessed
+        # if idx == 0:
+        if self.tokens != tokens:
+            self.feature_dict = get_applicable_feats(tokens, self.stop_words, indexer)
+            self.tokens = tokens
 
+        # Get the sigmoid predictor using the feature_dict and the final weights
+        value = self.loss.sigmoid(self.feature_dict[idx], self.weights)
+        if value > 0.5:
+            return 1
+        else: return 0
+
+def get_stop_words():
+    stop_words = []
+    with open("stop_words.txt", "r") as f:
+        for line in f:
+            stop = f.readline()
+            stop = stop.strip()
+            if stop != "":
+                stop_words.append(stop)
+    return stop_words
 
 def train_classifier(ner_exs):
-    # Todo: Implement a training method here, follow steps below:
+    # Create an Indexer object to track features, then initialize it with feature set
     indexer = Indexer()
     indexer = init_features(indexer)
-    optimizer = SGDOptimizer(np.random.random(len(indexer)), .1)
 
-    for ex in ner_exs:
+    # initialize SGDoptimizer with random weights and 0.1 learning rate
+    sgd = SGDOptimizer(np.random.rand(len(indexer)), 0.1)
 
-        feature_dict = get_applicable_feats(ex.tokens)
-        scores_words = get_score_from_feats(feature_dict, indexer, weights)
+    # initialize a LogisticLoss object. Will need to send it the
+    loss = LogisticLoss(indexer)
 
-        for score, word in scores_words:
-            sig_score = sigmoid(score)
-            print("{} has sigmoid of {:.2f}".format(word, sig_score))
+    stop_words = get_stop_words()
 
-    # use counter to keep track of gradient (?)
-    # can do vector implementation, using dot product instead of looping over each element (?)
-    # features to use: word indicators, capitalization, possessives, any other word features (?)
+    # Do all featurization here, before the training loops...
+    # Want a huge list of lists with features for every token
 
-    # Probably want to implement a sigmoid (logistic regression) classifier here.
-    # raise Exception("Implement me!")
-    # Will need to calculate the gradient as well.
-    pass
+
+    for epochs in range(25):
+
+        for sent_ex in ner_exs:
+            labels = sent_ex.labels
+            tokens = sent_ex.tokens
+            # Get the applicable features for each word in a sentence.
+            # important to do this at sentence level because some features depend on other words in sentence
+            feature_dict, indexer = get_applicable_feats(tokens, stop_words, indexer)
+
+            # update the indexer in the LogisticLoss class so that len(indexer) stays consistent
+            loss.update_indexer(indexer)
+
+            # feature_dict will have form {0:["token", "feat1", "feat5"], 1:...}
+            # where keys are the position of the word in a sentence, and the first value in list is the token itself
+
+            # for each word in the sentence
+            for key, feat_list in feature_dict.items():
+                # get current weights
+                weights = sgd.weights
+
+                #labels[key] is the correct label for each token, since the key is the position of the
+                # token in the sentence. feat_list is the list of features (in strings) for the given token
+                gradient = loss.calculate_gradient(labels[key], feat_list, weights)
+
+                # plug into gradient update and update weights
+                sgd.apply_gradient_update(gradient, 1)
+
+    for i in range(len(indexer)):
+        print(indexer.get_object(i), sgd.get_final_weights()[i])
+
+    pred = PersonClassifier(sgd.get_final_weights(), indexer)
+    return pred
 
 def sigmoid(z):
     """Implement logistic regression here. Takes two numpy arrays, calculates their dot product,
@@ -120,8 +171,16 @@ def sigmoid(z):
     out = np.exp(z)/(1+np.exp(z))
     return out
 
-def sigmoid_loss():
-    pass
+# def calculate_gradient(sig_val, label, feat_vect, indexer):
+#     # feat_vect does not hold any zero values, but instead it is used to index
+#     # which features are applicable to a particular word. ie feat_vec == [4,5] means
+#     # the 4th and 5th features are 1, and all others are 0
+#     grad = np.zeros(len(indexer))
+#
+#     # The cost function being used is (sigma(wx) - y) where sigma is the logistic value, and y is the correct label
+#     # This function keeps all values zero except those that have features show up
+#     for index_val in feat_vect:
+#         grad[index_val] = (sig_val - label)
 
 def evaluate_classifier(exs, classifier):
     num_correct = 0
@@ -171,10 +230,11 @@ def main():
     dev_class_exs = list(transform_for_classification(read_data(args.dev_path)))
 
     # Train the model
-    if args.model == "BAD":
-        classifier = train_count_based_binary_classifier(train_class_exs)
-    else:
-        classifier = train_classifier(train_class_exs)
+    # if args.model == "BAD":
+    #     classifier = train_count_based_binary_classifier(train_class_exs)
+    # else:
+    #     classifier = train_classifier(train_class_exs)
+    classifier = train_classifier(train_class_exs)
 
     print("Data reading and training took %f seconds" % (time.time() - start_time))
     # Evaluate on training, development, and test data

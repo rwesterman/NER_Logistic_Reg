@@ -1,12 +1,11 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "5b2ed985a25903b6910a457584536b8b8b1029ed7cb5c5620440eb01c41c0111"
+            "sha256": "b5d7396b44a000b6ec97a06162130ea11760b6e5cb2cd7d14a92f8492414d268"
         },
         "pipfile-spec": 6,
         "requires": {
-            "python_version": "3.7"
-
+            "python_version": "3.6"
         },
         "sources": [
             {
@@ -45,6 +44,13 @@
                 "sha256:c39efa13fbdeb4506c476c9b3babf6a718da943dab7811c206005a4a956c080c"
             ],
             "version": "==4.3.0"
+        },
+        "defusedxml": {
+            "hashes": [
+                "sha256:24d7f2f94f7f3cb6061acb215685e5125fbcdc40a857eff9de22518820b0a4f4",
+                "sha256:702a91ade2968a82beb0db1e0766a6a273f33d4616a6ce8cde475d8e09853b20"
+            ],
+            "version": "==0.5.0"
         },
         "entrypoints": {
             "hashes": [
@@ -148,10 +154,10 @@
         },
         "nbconvert": {
             "hashes": [
-                "sha256:12b1a4671d4463ab73af6e4cbcc965b62254e05d182cd54995dda0d0ef9e2db9",
-                "sha256:260d390b989a647575b8ecae2cd06a9eaead10d396733d6e50185d5ebd08996e"
+                "sha256:08d21cf4203fabafd0d09bbd63f06131b411db8ebeede34b0fd4be4548351779",
+                "sha256:a8a2749f972592aa9250db975304af6b7337f32337e523a2c995cc9e12c07807"
             ],
-            "version": "==5.3.1"
+            "version": "==5.4.0"
         },
         "nbformat": {
             "hashes": [
@@ -200,7 +206,6 @@
             ],
             "index": "pypi",
             "version": "==1.15.1"
-
         },
         "pandocfilters": {
             "hashes": [
