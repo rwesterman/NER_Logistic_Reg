@@ -7,6 +7,7 @@ from nerdata import *
 from utils import *
 from optimizers import *
 
+import numpy as np
 
 # Command-line arguments to the system -- you can extend these if you want, but you shouldn't need to modify any of them
 def _parse_args():
@@ -19,7 +20,6 @@ def _parse_args():
     parser.add_argument('--no_run_on_test', dest='run_on_test', default=True, action='store_false', help='skip printing output on the test set')
     args = parser.parse_args()
     return args
-
 
 # Wrapper for an example of the person binary classification task.
 # tokens: list of string words
@@ -35,11 +35,15 @@ class PersonExample(object):
 
 # Changes NER-style chunk examples into binary classification examples.
 def transform_for_classification(ner_exs):
+    # Take each LabeledSentence object and extract the bio tags.
     for labeled_sent in ner_exs:
         tags = bio_tags_from_chunks(labeled_sent.chunks, len(labeled_sent))
-        labels = [1 if tag.endswith("PER") else 0 for tag in tags]
-        yield PersonExample([tok.word for tok in labeled_sent.tokens], labels)
 
+        # create a list "labels" that has 1 for every position with a person's name, 0 otherwise
+        labels = [1 if tag.endswith("PER") else 0 for tag in tags]
+
+        # Yield a PersonExample object with a list of tokens and labels
+        yield PersonExample([tok.word for tok in labeled_sent.tokens], labels)
 
 # Person classifier that takes counts of how often a word was observed to be the positive and negative class
 # in training, and classifies as positive any tokens which are observed to be positive more than negative.
@@ -50,6 +54,7 @@ class CountBasedPersonClassifier(object):
         self.neg_counts = neg_counts
 
     def predict(self, tokens, idx):
+        # simply checks that the "positive" word count is higher than the "negative" word count in a sentence
         if self.pos_counts.get_count(tokens[idx]) > self.neg_counts.get_count(tokens[idx]):
             return 1
         else:
@@ -70,6 +75,7 @@ def train_count_based_binary_classifier(ner_exs):
 
 
 # "Real" classifier that takes a weight vector
+# This will be used in the actual evaluation but not in the training
 class PersonClassifier(object):
     def __init__(self, weights, indexer):
         self.weights = weights
@@ -81,8 +87,26 @@ class PersonClassifier(object):
 
 
 def train_classifier(ner_exs):
-    raise Exception("Implement me!")
+    # Todo: Implement a training method here, follow steps below:
+    for ex in ner_exs:
+        create_features(ex)
 
+
+    # use counter to keep track of gradient (?)
+    # can do vector implementation, using dot product instead of looping over each element (?)
+    # features to use: word indicators, capitalization, possessives, any other word features (?)
+
+    # Probably want to implement a sigmoid (logistic regression) classifier here.
+    # raise Exception("Implement me!")
+    # Will need to calculate the gradient as well.
+    pass
+
+def sigmoid(weights, inputs):
+    """Implement logistic regression here. Takes two numpy arrays, calculates their dot product,
+    and plugs it into sigmoid formula"""
+    z = np.dot(weights, inputs)
+    out = np.exp(z)/(1+np.exp(z))
+    print(out)
 
 def evaluate_classifier(exs, classifier):
     num_correct = 0
@@ -121,18 +145,22 @@ def predict_write_output_to_file(exs, classifier, outfile):
         f.write("\n")
     f.close()
 
-if __name__ == '__main__':
-    start_time = time.time()
-    args = _parse_args()
+
+def main():
+    start_time = time.time()  # saves start time for calculation of running time
+    args = _parse_args()  # _parse_args() uses argparse to determine constraints (such as model to run)
     print(args)
+
     # Load the training and test data
     train_class_exs = list(transform_for_classification(read_data(args.train_path)))
     dev_class_exs = list(transform_for_classification(read_data(args.dev_path)))
+
     # Train the model
     if args.model == "BAD":
         classifier = train_count_based_binary_classifier(train_class_exs)
     else:
         classifier = train_classifier(train_class_exs)
+
     print("Data reading and training took %f seconds" % (time.time() - start_time))
     # Evaluate on training, development, and test data
     print("===Train accuracy===")
@@ -146,4 +174,14 @@ if __name__ == '__main__':
         print("Wrote predictions on %i labeled sentences to %s" % (len(test_exs), args.test_output_path))
 
 
+if __name__ == '__main__':
+    # main()
+    index = Indexer()
+    print(index)
+    maybe_add_feature([0,1,5], index, True, "Capitalized")
+    print(index)
+    maybe_add_feature([8,10], index, True, "Possessive")
+    print(index.index_of("Capitalized"))
+    print(index.index_of("Possessive"))
+    print(index.get_object(1))
 

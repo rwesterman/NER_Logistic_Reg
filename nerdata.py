@@ -144,14 +144,23 @@ def read_data(file):
     for line in f:
         stripped = line.strip()
         if stripped != "":
+            # split the line into tokens
             fields = stripped.split(" ")
+
+            # If fields contains 4 or 5 "words", then append the first three to curr_tokens,
+            # and append the last to curr_bio_tags
             if len(fields) == 4 or len(fields) == 5:
+                # Token object takes (word, position, chunk)
                 curr_tokens.append(Token(fields[0], fields[1], fields[2]))
                 curr_bio_tags.append(fields[-1])
+
+        # If the line is empty, then the sentence is complete. Create a LabeledSentence object and
+        # add it to the list "sentences"
         elif stripped == "" and len(curr_tokens) > 0:
             sentences.append(LabeledSentence(curr_tokens, chunks_from_bio_tag_seq(curr_bio_tags)))
             curr_tokens = []
             curr_bio_tags = []
+    # return the list of LabeledSentence objects
     return sentences
 
 

@@ -5,6 +5,8 @@
 # labels, features, etc. into coordinates of a vector space.
 class Indexer(object):
     def __init__(self):
+
+        # Takes no arguments.
         self.objs_to_ints = {}
         self.ints_to_objs = {}
 
@@ -174,11 +176,13 @@ class Beam(object):
 def maybe_add_feature(feats, feature_indexer, add_to_indexer, feat):
     if add_to_indexer:
         feats.append(feature_indexer.get_index(feat))
+        # print(feats)
+        return feats
     else:
         feat_idx = feature_indexer.index_of(feat)
         if feat_idx != -1:
             feats.append(feat_idx)
-
+        return feats
 
 # Computes the dot product over a list of features (i.e., a sparse feature vector)
 # and a weight vector (numpy array)
