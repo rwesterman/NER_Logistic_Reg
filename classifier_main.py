@@ -130,7 +130,7 @@ def train_classifier(ner_exs, dev_exs):
 
     global train_flag
 
-    epoch_count = 200
+    epoch_count = 1000
     alpha = .2
 
     # Do all featurization here, before the training loops...
@@ -171,32 +171,32 @@ def train_classifier(ner_exs, dev_exs):
 
         if epoch % 2 == 0:
             pred = PersonClassifier(sgd.get_final_weights(), indexer)
+            with open("Epoch_F1_Tracking.txt", "a") as f:
+                f.write("Epoch {} -- ".format(epoch))
             evaluate_classifier(dev_exs, pred)
 
 
+    static_feat_list = Features
 
-    # for i in range(len(indexer)):
-        # print(indexer.get_object(i), sgd.get_final_weights()[i])
-
-    static_feat_list = [
-        "isCap",
-        "isNotCap",  # Negative feature for non capitalized words
-        "allCaps",  # allCaps
-        "isPoss",  # is possessive (next token is 's)
-        "isFirstWord",
-        "isInitials",  # Is representing initials: R.W.
-        "isArticle",  # NOT WORKING
-        "beginsWithNum",  # The word begins with numbers
-        "hasNumbers",  # The token contains numbers
-        "endS",  #
-        "hasTitle",  # token is preceded by a title
-        "onlyLetters",  # checks that token only has letters
-        "hasBias",  # general bias term across all words. This should be strongly negative
-        "isTitle",  # if current word is title
-        "noAlphaNum",
-        "hasApostrophe",
-        "hasHyphen",
-    ]
+    # [
+    #     "isCap",
+    #     "isNotCap",  # Negative feature for non capitalized words
+    #     "allCaps",  # allCaps
+    #     "isPoss",  # is possessive (next token is 's)
+    #     "isFirstWord",
+    #     "isInitials",  # Is representing initials: R.W.
+    #     "isArticle",  # NOT WORKING
+    #     "beginsWithNum",  # The word begins with numbers
+    #     "hasNumbers",  # The token contains numbers
+    #     "endS",  #
+    #     "hasTitle",  # token is preceded by a title
+    #     "onlyLetters",  # checks that token only has letters
+    #     "hasBias",  # general bias term across all words. This should be strongly negative
+    #     "isTitle",  # if current word is title
+    #     "noAlphaNum",
+    #     "hasApostrophe",
+    #     "hasHyphen",
+    # ]
 
     for feat in static_feat_list:
         weight = sgd.access(indexer.get_index(feat, False))
@@ -218,24 +218,23 @@ def evaluate_classifier(exs, classifier):
     num_pred = 0
     num_gold = 0
     num_total = 0
-    with open("Wrong_Predictions.txt", "w") as f:
-        f.write("Incorrect Predictions\n")
-        f.write("=====================\n")
-
-        for ex in exs:
-            for idx in range(0, len(ex)):
-                prediction = classifier.predict(ex.tokens, idx)
-                if prediction == ex.labels[idx]:
-                    num_correct += 1
-                else:
-                    f.write("{} wrong prediction is {}\n".format(ex.tokens[idx], prediction))
-                if prediction == 1:
-                    num_pred += 1
-                if ex.labels[idx] == 1:
-                    num_gold += 1
-                if prediction == 1 and ex.labels[idx] == 1:
-                    num_pos_correct += 1
-                num_total += 1
+    # with open("Wrong_Predictions.txt", "w") as f:
+    #     f.write("Incorrect Predictions\n")
+    #     f.write("=====================\n")
+    for ex in exs:
+        for idx in range(0, len(ex)):
+            prediction = classifier.predict(ex.tokens, idx)
+            if prediction == ex.labels[idx]:
+                num_correct += 1
+            # else:
+                # f.write("{} wrong prediction is {}\n".format(ex.tokens[idx], prediction))
+            if prediction == 1:
+                num_pred += 1
+            if ex.labels[idx] == 1:
+                num_gold += 1
+            if prediction == 1 and ex.labels[idx] == 1:
+                num_pos_correct += 1
+            num_total += 1
     print("Accuracy: %i / %i = %f" % (num_correct, num_total, float(num_correct) / num_total))
     prec = float(num_pos_correct) / num_pred if num_pred > 0 else 0.0
     rec = float(num_pos_correct) / num_gold if num_gold > 0 else 0.0
@@ -243,7 +242,8 @@ def evaluate_classifier(exs, classifier):
     print("Precision: %i / %i = %f" % (num_pos_correct, num_pred, prec))
     print("Recall: %i / %i = %f" % (num_pos_correct, num_gold, rec))
     print("F1: %f" % f1)
-
+    with open("Epoch_F1_Tracking.txt", "a") as f:
+        f.write("F1: {}\n".format(f1))
 
 # Runs prediction on exs and writes the outputs to outfile, one token per line
 def predict_write_output_to_file(exs, classifier, outfile):
