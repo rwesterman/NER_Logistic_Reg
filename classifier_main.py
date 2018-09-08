@@ -13,6 +13,14 @@ from pprint import pprint
 
 import numpy as np
 
+# Todo: Try changing learning rate
+# Todo: Try implementing POS tagging
+# NLTK dataset to get POS dataset. Build up a dictionary that has the token as key, and POS as value for every token in the vocabulary
+# Don't add Proper Noun's as a feature, but divide nouns vs everything else as two features (maybe plural nouns as well?)
+# Todo: Walk through code to make sure all of my math is correct
+
+train_flag = True
+
 # Command-line arguments to the system -- you can extend these if you want, but you shouldn't need to modify any of them
 def _parse_args():
     parser = argparse.ArgumentParser(description='trainer.py')
@@ -42,7 +50,6 @@ def transform_for_classification(ner_exs):
     # Take each LabeledSentence object and extract the bio tags.
     for labeled_sent in ner_exs:
         tags = bio_tags_from_chunks(labeled_sent.chunks, len(labeled_sent))
-
         # create a list "labels" that has 1 for every position with a person's name, 0 otherwise
         labels = [1 if tag.endswith("PER") else 0 for tag in tags]
 
@@ -86,7 +93,7 @@ class PersonClassifier(object):
         self.loss = LogisticLoss(self.indexer)
         self.stop_words = get_stop_words()
         self.tokens = []
-        self.feature_dict = {}
+        self.feature_list = []
 
     # Makes a prediction for token at position idx in the given PersonExample
     def predict(self, tokens, idx):
@@ -95,11 +102,11 @@ class PersonClassifier(object):
         # Only create features for the sentence when the first token is accessed
         # if idx == 0:
         if self.tokens != tokens:
-            self.feature_dict = get_applicable_feats(tokens, self.stop_words, indexer)
+            self.feature_list = get_applicable_feats(tokens, self.stop_words, self.indexer, [], train_flag)
             self.tokens = tokens
 
         # Get the sigmoid predictor using the feature_dict and the final weights
-        value = self.loss.sigmoid(self.feature_dict[idx], self.weights)
+        value = self.loss.sigmoid(self.feature_list[idx], self.weights)
         if value > 0.5:
             return 1
         else: return 0
@@ -118,48 +125,79 @@ def train_classifier(ner_exs):
     # Create an Indexer object to track features, then initialize it with feature set
     indexer = Indexer()
     indexer = init_features(indexer)
+    stop_words = get_stop_words()
+    all_labels = []
+
+    epoch_count = 200
+    alpha = .2
+
+    # Do all featurization here, before the training loops...
+    curr_feats = []
+    for sent_ex in ner_exs:
+        labels = sent_ex.labels
+        # Gather all of the labels in one list
+        for label in labels:
+            all_labels.append(label)
+
+        tokens = sent_ex.tokens
+        # Get the applicable features for each word in a sentence.
+        # important to do this at sentence level because some features depend on other words in sentence
+        curr_feats = get_applicable_feats(tokens, stop_words, indexer, curr_feats, train_flag)
 
     # initialize SGDoptimizer with random weights and 0.1 learning rate
-    sgd = SGDOptimizer(np.random.rand(len(indexer)), 0.1)
+
+    sgd = SGDOptimizer(np.zeros(len(indexer)), alpha)
 
     # initialize a LogisticLoss object. Will need to send it the
     loss = LogisticLoss(indexer)
 
-    stop_words = get_stop_words()
+    # print("feature list is {} elements\nlabels is {} elements".format(len(curr_feats), len(all_labels)))
+    for epoch in range(epoch_count):
+        print('Epoch {}, alpha {}'.format(epoch, alpha))
+        for index, feat_list in enumerate(curr_feats):
+            # get current weights
+            weights = sgd.weights
 
-    # Do all featurization here, before the training loops...
-    # Want a huge list of lists with features for every token
+            #labels[index] is the correct label for each token, since the key is the position of the
+            # token in the sentence. feat_list is the list of features (in strings) for the given token
+            gradient = loss.calculate_gradient(all_labels[index], feat_list, weights)
+
+            # plug into gradient update and update weights
+            sgd.apply_gradient_update(gradient, alpha)
+        alpha = alpha - (.1/(2*epoch_count))
+
+        if epoch % 2 == 0:
+            pred = PersonClassifier(sgd.get_final_weights(), indexer)
+            evaluate_classifier(ner_exs, pred)
 
 
-    for epochs in range(25):
 
-        for sent_ex in ner_exs:
-            labels = sent_ex.labels
-            tokens = sent_ex.tokens
-            # Get the applicable features for each word in a sentence.
-            # important to do this at sentence level because some features depend on other words in sentence
-            feature_dict, indexer = get_applicable_feats(tokens, stop_words, indexer)
+    # for i in range(len(indexer)):
+        # print(indexer.get_object(i), sgd.get_final_weights()[i])
 
-            # update the indexer in the LogisticLoss class so that len(indexer) stays consistent
-            loss.update_indexer(indexer)
+    static_feat_list = [
+        "isCap",
+        "isNotCap",  # Negative feature for non capitalized words
+        "allCaps",  # allCaps
+        "isPoss",  # is possessive (next token is 's)
+        "isFirstWord",
+        "isInitials",  # Is representing initials: R.W.
+        "isArticle",  # NOT WORKING
+        "beginsWithNum",  # The word begins with numbers
+        "hasNumbers",  # The token contains numbers
+        "endS",  #
+        "hasTitle",  # token is preceded by a title
+        "onlyLetters",  # checks that token only has letters
+        "hasBias",  # general bias term across all words. This should be strongly negative
+        "isTitle",  # if current word is title
+        "noAlphaNum",
+        "hasApostrophe",
+        "hasHyphen",
+    ]
 
-            # feature_dict will have form {0:["token", "feat1", "feat5"], 1:...}
-            # where keys are the position of the word in a sentence, and the first value in list is the token itself
-
-            # for each word in the sentence
-            for key, feat_list in feature_dict.items():
-                # get current weights
-                weights = sgd.weights
-
-                #labels[key] is the correct label for each token, since the key is the position of the
-                # token in the sentence. feat_list is the list of features (in strings) for the given token
-                gradient = loss.calculate_gradient(labels[key], feat_list, weights)
-
-                # plug into gradient update and update weights
-                sgd.apply_gradient_update(gradient, 1)
-
-    for i in range(len(indexer)):
-        print(indexer.get_object(i), sgd.get_final_weights()[i])
+    for feat in static_feat_list:
+        weight = sgd.access(indexer.get_index(feat, False))
+        print("{} => {}".format(feat, weight))
 
     pred = PersonClassifier(sgd.get_final_weights(), indexer)
     return pred
@@ -171,35 +209,30 @@ def sigmoid(z):
     out = np.exp(z)/(1+np.exp(z))
     return out
 
-# def calculate_gradient(sig_val, label, feat_vect, indexer):
-#     # feat_vect does not hold any zero values, but instead it is used to index
-#     # which features are applicable to a particular word. ie feat_vec == [4,5] means
-#     # the 4th and 5th features are 1, and all others are 0
-#     grad = np.zeros(len(indexer))
-#
-#     # The cost function being used is (sigma(wx) - y) where sigma is the logistic value, and y is the correct label
-#     # This function keeps all values zero except those that have features show up
-#     for index_val in feat_vect:
-#         grad[index_val] = (sig_val - label)
-
 def evaluate_classifier(exs, classifier):
     num_correct = 0
     num_pos_correct = 0
     num_pred = 0
     num_gold = 0
     num_total = 0
-    for ex in exs:
-        for idx in range(0, len(ex)):
-            prediction = classifier.predict(ex.tokens, idx)
-            if prediction == ex.labels[idx]:
-                num_correct += 1
-            if prediction == 1:
-                num_pred += 1
-            if ex.labels[idx] == 1:
-                num_gold += 1
-            if prediction == 1 and ex.labels[idx] == 1:
-                num_pos_correct += 1
-            num_total += 1
+    with open("Wrong_Predictions.txt", "w") as f:
+        f.write("Incorrect Predictions\n")
+        f.write("=====================\n")
+
+        for ex in exs:
+            for idx in range(0, len(ex)):
+                prediction = classifier.predict(ex.tokens, idx)
+                if prediction == ex.labels[idx]:
+                    num_correct += 1
+                else:
+                    f.write("{} wrong prediction is {}\n".format(ex.tokens[idx], prediction))
+                if prediction == 1:
+                    num_pred += 1
+                if ex.labels[idx] == 1:
+                    num_gold += 1
+                if prediction == 1 and ex.labels[idx] == 1:
+                    num_pos_correct += 1
+                num_total += 1
     print("Accuracy: %i / %i = %f" % (num_correct, num_total, float(num_correct) / num_total))
     prec = float(num_pos_correct) / num_pred if num_pred > 0 else 0.0
     rec = float(num_pos_correct) / num_gold if num_gold > 0 else 0.0
@@ -239,8 +272,10 @@ def main():
     print("Data reading and training took %f seconds" % (time.time() - start_time))
     # Evaluate on training, development, and test data
     print("===Train accuracy===")
+    global train_flag
     evaluate_classifier(train_class_exs, classifier)
     print("===Dev accuracy===")
+    train_flag = False
     evaluate_classifier(dev_class_exs, classifier)
     if args.run_on_test:
         print("Running on test")
@@ -251,4 +286,7 @@ def main():
 
 if __name__ == '__main__':
     main()
-
+    # indexer = Indexer()
+    # curr_feats = get_applicable_feats("Bill is Bill".split(" "), get_stop_words(), indexer, [])
+    # print(curr_feats)
+    # print(indexer)

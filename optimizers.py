@@ -99,10 +99,16 @@ class SGDOptimizer(Optimizer):
         self.weights = init_weights
         self.alpha = alpha
 
+    # Try changing this back, and using Counter to store gradients to pass in.
+    # Look at lecture notes to see gradient formula that captures both Y=1 and Y=0 for this.
+
     # gradient is changed to just be the vector by which to change the weights
-    def apply_gradient_update(self, gradient, batch_size):
+    def apply_gradient_update(self, gradient, batch_size, alpha = None):
         # originally gradient was a Counter() object. I am instead calculating it in
         # my LogisticLoss object and sending it here for the simple implementation.
+
+        if alpha is not None:
+            self.alpha = alpha
         self.weights = self.weights - self.alpha * gradient
 
         # for i in gradient.keys():
