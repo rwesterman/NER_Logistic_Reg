@@ -20,7 +20,7 @@ AL-AIN 0
 , 0
 United 0
 Arab 0
-Emirates 1
+Emirates 0
 1996-12-06 0
 
 Japan 0
@@ -164,7 +164,7 @@ Despite 0
 winning 0
 the 0
 Asian 0
-Games 1
+Games 0
 title 0
 two 0
 years 0
@@ -360,7 +360,7 @@ us 0
 . 0
 
 The 0
-Syrians 1
+Syrians 0
 scored 0
 early 0
 and 0
@@ -714,7 +714,7 @@ Croci 1
 Gianluca 1
 Guidi 1
 , 0
-Nicola 1
+Nicola 0
 Mazzucato 1
 , 0
 Alessandro 1
@@ -741,7 +741,7 @@ AL-AIN 0
 , 0
 United 0
 Arab 0
-Emirates 1
+Emirates 0
 1996-12-06 0
 
 Two 0
@@ -1280,7 +1280,7 @@ U.S. 0
 23.56 0
 
 6. 0
-Donna 1
+Donna 0
 Weinbrecht 1
 ( 0
 U.S. 0
@@ -1334,7 +1334,7 @@ AL-AIN 0
 , 0
 United 0
 Arab 0
-Emirates 1
+Emirates 0
 1996-12-06 0
 
 Results 0
@@ -1874,7 +1874,7 @@ Karachi 0
 SOCCER 0
 - 0
 ENGLISH 0
-F.A. 1
+F.A. 0
 CUP 0
 SECOND 0
 ROUND 0
@@ -1888,8 +1888,8 @@ Result 0
 of 0
 an 0
 English 0
-F.A. 1
-Challenge 1
+F.A. 0
+Challenge 0
 
 Cup 0
 second 0
@@ -1901,7 +1901,7 @@ Friday 0
 
 Plymouth 0
 4 0
-Exeter 1
+Exeter 0
 1 0
 
 -DOCSTART- 0
@@ -1909,7 +1909,7 @@ Exeter 1
 SOCCER 0
 - 0
 BLINKER 0
-BAN 0
+BAN 1
 LIFTED 0
 . 0
 
@@ -2329,7 +2329,7 @@ Group 0
 B 0
 
 Teamsystem 1
-Bologna 1
+Bologna 0
 ( 0
 Italy 0
 ) 0
@@ -2425,7 +2425,7 @@ Spain 0
 5 0
 13 0
 
-Split 1
+Split 0
 ( 0
 Croatia 0
 ) 0
@@ -2477,7 +2477,7 @@ Yugoslavia 0
 14 0
 
 Kinder 1
-Bologna 1
+Bologna 0
 ( 0
 Italy 0
 ) 0
@@ -2513,7 +2513,7 @@ UNION 0
 LITTLE 0
 TO 0
 MISS 0
-CAMPESE 1
+CAMPESE 0
 FAREWELL 0
 . 0
 
@@ -3084,7 +3084,7 @@ Terblanche 1
 67 0
 133 0
 Mark 1
-McNulty 0
+McNulty 1
 ( 0
 Zimbabwe 0
 ) 0
@@ -3275,8 +3275,8 @@ striker 0
 Viorel 1
 Ion 1
 of 0
-Otelul 1
-Galati 1
+Otelul 0
+Galati 0
 and 0
 defender 0
 Liviu 1
@@ -3322,8 +3322,8 @@ Bucharest 0
 are 0
 top 0
 and 0
-Otelul 1
-Galati 1
+Otelul 0
+Galati 0
 third 0
 . 0
 " 0
@@ -3347,7 +3347,7 @@ reporters 0
 
 League 0
 title-holders 0
-Steaua 1
+Steaua 0
 Bucharest 0
 , 0
 who 0
@@ -3382,7 +3382,7 @@ who 0
 recently 0
 moved 0
 from 0
-Steaua 1
+Steaua 0
 to 0
 Turkish 0
 club 0
@@ -3472,7 +3472,7 @@ Viorel 1
 Ion 1
 . 0
 
-REUTER 0
+REUTER 1
 
 -DOCSTART- 0
 
@@ -3503,15 +3503,15 @@ on 0
 Thursday 0
 . 0
 
-Goias 1
+Goias 0
 1 0
-Gremio 1
+Gremio 0
 3 0
 
-Portuguesa 1
+Portuguesa 0
 1 0
 Atletico 0
-Mineiro 1
+Mineiro 0
 0 0
 
 -DOCSTART- 0
@@ -4318,9 +4318,9 @@ Sheffield 1
 Shield 1
 match 0
 between 0
-Tasmania 1
+Tasmania 0
 and 0
-Victoria 1
+Victoria 0
 at 0
 Bellerive 1
 Oval 0
@@ -4328,7 +4328,7 @@ on 0
 Friday 0
 : 0
 
-Tasmania 1
+Tasmania 0
 352 0
 for 0
 three 0
@@ -4350,7 +4350,7 @@ DiVenuto 0
 119 0
 ) 0
 v 0
-Victoria 1
+Victoria 0
 . 0
 
 -DOCSTART- 0
@@ -4861,7 +4861,7 @@ Hooper 1
 Jimmy 1
 Adams 1
 , 0
-Junior 1
+Junior 0
 Murray 1
 , 0
 Nixon 1
@@ -4972,7 +4972,7 @@ Group 0
 C 0
 
 Sun 0
-Jun 1
+Jun 0
 ( 0
 China 0
 ) 0
@@ -5032,7 +5032,7 @@ China 0
 15-4 0
 15-5 0
 
-Semifinals 1
+Semifinals 0
 ( 0
 on 0
 Saturday 0
@@ -5051,8 +5051,8 @@ Wijaya 1
 Indonesia 0
 ) 0
 ; 0
-Sun 1
-Jun 1
+Sun 0
+Jun 0
 ( 0
 China 0
 ) 0
@@ -5137,7 +5137,7 @@ China 0
 11-4 0
 . 0
 
-Semifinals 1
+Semifinals 0
 ( 0
 on 0
 Saturday 0
@@ -5675,7 +5675,7 @@ LOUIS 0
 0 0
 
 Tampa 1
-Bay 1
+Bay 0
 2 0
 LOS 0
 ANGELES 0
@@ -5845,7 +5845,7 @@ East 0
 tie 0
 with 0
 the 0
-Dallas 1
+Dallas 0
 Cowboys 1
 and 0
 Washington 1
@@ -5863,7 +5863,7 @@ Jets 1
 and 0
 then 0
 entertain 0
-Arizona 1
+Arizona 0
 . 0
 
 The 0
@@ -5874,7 +5874,7 @@ allowed 0
 the 0
 idle 0
 Green 1
-Bay 1
+Bay 0
 Packers 1
 ( 0
 10-3 0
@@ -6278,7 +6278,7 @@ DALLAS 0
 9 0
 1/2 0
 
-DENVER 0
+DENVER 1
 5 0
 14 0
 .263 0
@@ -6748,7 +6748,7 @@ BALTIMORE 0
 AT 0
 CINCINNATI 0
 
-DENVER 0
+DENVER 1
 AT 0
 GREEN 0
 BAY 0
@@ -6868,7 +6868,7 @@ State 0
 left 0
 tackle 0
 Orlando 1
-Pace 1
+Pace 0
 became 0
 the 0
 first 0
@@ -6917,9 +6917,9 @@ berth 0
 in 0
 the 0
 Rose 1
-Bowl 1
+Bowl 0
 against 0
-Arizona 1
+Arizona 0
 State 0
 . 0
 
@@ -6946,7 +6946,7 @@ situations 0
 Last 0
 year 0
 , 0
-Pace 1
+Pace 0
 became 0
 the 0
 first 0
@@ -6968,14 +6968,14 @@ three 0
 senior 0
 finalists 0
 -- 0
-Virginia 1
+Virginia 0
 Tech 1
 defensive 0
 end 0
 Cornell 1
 Brown 1
 , 0
-Arizona 1
+Arizona 0
 State 0
 offensive 0
 tackle 0
@@ -6987,7 +6987,7 @@ end 0
 Jared 1
 Tomich 1
 of 0
-Nebraska 1
+Nebraska 0
 . 0
 
 The 0
@@ -7025,7 +7025,7 @@ coach 0
 of 0
 the 0
 Green 1
-Bay 1
+Bay 0
 Packers 1
 . 0
 
@@ -7587,7 +7587,7 @@ Bruno 1
 N'Gotty 1
 2 0
 ) 0
-Nancy 1
+Nancy 0
 2 0
 ( 0
 Paul 1
@@ -7596,7 +7596,7 @@ Fischer 1
 70 0
 , 0
 Phil 1
-Gray 1
+Gray 0
 89 0
 ) 0
 . 0
@@ -7922,7 +7922,7 @@ Paris 0
 St 0
 Germain 0
 1 0
-Nancy 1
+Nancy 0
 2 0
 
 -DOCSTART- 0
@@ -8013,7 +8013,7 @@ Reich 1
 Carl 1
 44th 0
 , 0
-Dundee 1
+Dundee 0
 69th 0
 ) 0
 Freiburg 0
@@ -8161,7 +8161,7 @@ after 0
 being 0
 head-butted 0
 by 0
-Liberian 1
+Liberian 0
 striker 0
 Georg 1
 Weah 1
@@ -8342,7 +8342,7 @@ Spain 0
 Jose 1
 Taira 1
 ( 0
-Salamanca 1
+Salamanca 0
 , 0
 Spain 0
 ) 0
@@ -8381,7 +8381,7 @@ Jorge 1
 Cadete 1
 ( 0
 Celtic 0
-Glasgow 1
+Glasgow 0
 , 0
 Scotland 0
 ) 0
@@ -8696,7 +8696,7 @@ the 0
 gates 0
 of 0
 the 0
-Santiago 1
+Santiago 0
 Bernabeu 0
 stadium 0
 and 0
@@ -8715,7 +8715,7 @@ the 0
 Madrid 0
 daily 0
 El 1
-Mundo 1
+Mundo 0
 said 0
 on 0
 Friday 0
@@ -8834,7 +8834,7 @@ Barcelona 0
 19 0
 34 0
 
-Deportivo 1
+Deportivo 0
 Coruna 1
 15 0
 9 0
@@ -8865,7 +8865,7 @@ Madrid 0
 27 0
 
 Athletic 1
-Bilbao 1
+Bilbao 0
 15 0
 7 0
 4 0
@@ -8894,7 +8894,7 @@ Valladolid 1
 24 0
 
 Racing 1
-Santander 1
+Santander 0
 15 0
 5 0
 7 0
@@ -8913,7 +8913,7 @@ Vallecano 1
 19 0
 20 0
 
-Valencia 1
+Valencia 0
 15 0
 6 0
 2 0
@@ -9154,7 +9154,7 @@ Italian 0
 newspaper 0
 Gazzetta 1
 dello 0
-Sport 1
+Sport 0
 , 0
 he 0
 was 0
@@ -9182,7 +9182,7 @@ FIFA 0
 has 0
 named 0
 the 0
-Liberian 1
+Liberian 0
 for 0
 its 0
 1996 0
@@ -9366,7 +9366,7 @@ Milan 0
 home 0
 defeat 0
 by 0
-Rosenborg 1
+Rosenborg 0
 of 0
 Norway 0
 on 0
@@ -9377,7 +9377,7 @@ The 0
 defeat 0
 put 0
 the 0
-Italians 1
+Italians 0
 out 0
 of 0
 the 0
@@ -9544,7 +9544,7 @@ GMT 0
 ) 0
 : 0
 
-Bologna 1
+Bologna 0
 ( 0
 4 0
 ) 0
@@ -9558,10 +9558,10 @@ Piacenza 0
 Along 0
 with 0
 leaders 0
-Vicenza 1
+Vicenza 0
 , 0
 fourth-placed 0
-Bologna 1
+Bologna 0
 represent 0
 the 0
 biggest 0
@@ -9586,7 +9586,7 @@ Kolyvanov 1
 in 0
 attack 0
 , 0
-Bologna 1
+Bologna 0
 can 0
 expect 0
 a 0
@@ -9616,7 +9616,7 @@ Cagliari 0
 16 0
 ) 0
 v 0
-Reggiana 1
+Reggiana 0
 ( 0
 18 0
 ) 0
@@ -9632,7 +9632,7 @@ scrap 0
 following 0
 draws 0
 with 0
-Napoli 1
+Napoli 0
 and 0
 Inter 0
 in 0
@@ -9652,7 +9652,7 @@ Vega 1
 
 Bottom 0
 team 0
-Reggiana 1
+Reggiana 0
 are 0
 also 0
 without 0
@@ -9670,7 +9670,7 @@ Fiorentina 0
 10 0
 ) 0
 v 0
-Perugia 1
+Perugia 0
 ( 0
 8 0
 ) 0
@@ -9704,7 +9704,7 @@ against 0
 unpredictable 0
 , 0
 attack-oriented 0
-Perugia 1
+Perugia 0
 led 0
 by 0
 in-form 0
@@ -9827,7 +9827,7 @@ elimination 0
 by 0
 Norwegian 0
 side 0
-Rosenborg 1
+Rosenborg 0
 , 0
 a 0
 morale-boosting 0
@@ -9852,7 +9852,7 @@ Roberto 1
 Baggio 1
 , 0
 with 0
-Montenegrin 1
+Montenegrin 0
 Dejan 1
 Savicevic 1
 in 0
@@ -9865,7 +9865,7 @@ for 0
 Milan 0
 is 0
 that 0
-Udinese 1
+Udinese 0
 's 0
 German 0
 striker 0
@@ -9889,7 +9889,7 @@ Verona 1
 1330 0
 
 In-form 0
-Napoli 1
+Napoli 0
 should 0
 prove 0
 too 0
@@ -9911,7 +9911,7 @@ Roberto 1
 Ayala 1
 . 0
 
-Verona 1
+Verona 0
 's 0
 slim 0
 chances 0
@@ -10104,11 +10104,11 @@ nonetheless 0
 
 Full 0
 strength 0
-Vicenza 1
+Vicenza 0
 , 0
 led 0
 by 0
-Uruguayan 1
+Uruguayan 0
 Marcelo 1
 Otero 1
 , 0
@@ -10148,7 +10148,7 @@ Joceyln 1
 Angloma 1
 and 0
 injured 0
-Chilean 1
+Chilean 0
 striker 0
 Ivan 1
 Zamorano 1
@@ -10243,7 +10243,7 @@ Yugoslavia 0
 ) 0
 78 0
 Kinder 1
-Bologna 1
+Bologna 0
 ( 0
 Italy 0
 ) 0
@@ -11256,7 +11256,7 @@ The 0
 international 0
 airport 0
 in 0
-Timisoara 1
+Timisoara 0
 and 0
 the 0
 domestic 0
@@ -11418,7 +11418,7 @@ the 0
 Czech 0
 second 0
 city 0
-Brno 1
+Brno 0
 . 0
 
 " 0
@@ -11633,7 +11633,7 @@ cases 0
 belonged 0
 to 0
 Polish 0
-Jews 1
+Jews 0
 who 0
 died 0
 in 0
@@ -11741,7 +11741,7 @@ the 0
 powerful 0
 U.S. 0
 Senate 0
-Banking 1
+Banking 0
 Committee 0
 , 0
 of 0
@@ -11783,7 +11783,7 @@ of 0
 these 0
 citizens 0
 were 0
-Jews 1
+Jews 0
 murdered 0
 during 0
 the 0
@@ -11800,7 +11800,7 @@ Poland 0
 's 0
 3.5 0
 million 0
-Jews 1
+Jews 0
 . 0
 
 Rosati 1
@@ -12439,7 +12439,7 @@ t 0
 brewery 0
 , 0
 Elbrewery 1
-Company 1
+Company 0
 Ltd. 1
 ( 0
 EB 0
@@ -13018,7 +13018,7 @@ The 0
 UK 0
 Department 0
 of 0
-Transport 1
+Transport 0
 on 0
 Friday 0
 said 0
@@ -13166,7 +13166,7 @@ Thursday 0
 . 0
 
 One 0
-Global 1
+Global 0
 Depository 1
 Receipt 1
 represents 0
@@ -13401,8 +13401,8 @@ American 0
 alliance 0
 . 0
 
-Edna 1
-Fernandes 1
+Edna 0
+Fernandes 0
 
 LONDON 0
 1996-12-06 0
@@ -13876,7 +13876,7 @@ products 0
 mostly 0
 lower 0
 as 0
-Elf 1
+Elf 0
 strike 0
 ends 0
 . 0
@@ -13884,7 +13884,7 @@ ends 0
 LONDON 0
 1996-12-06 0
 
-Mediterranean 1
+Mediterranean 0
 oil 0
 products 0
 were 0
@@ -13895,7 +13895,7 @@ lower 0
 on 0
 Friday 0
 after 0
-Elf 1
+Elf 0
 refinery 0
 workers 0
 voted 0
@@ -14149,7 +14149,7 @@ prices 0
 fell 0
 after 0
 striking 0
-Elf 1
+Elf 0
 refinery 0
 workers 0
 voted 0
@@ -14175,7 +14175,7 @@ tight 0
 Italian 0
 supplies 0
 after 0
-Elf 1
+Elf 0
 scooped 0
 up 0
 Med 1
@@ -14486,7 +14486,7 @@ on 0
 Friday 0
 that 0
 rebel 0
-Conservative 1
+Conservative 0
 MP 0
 Sir 0
 John 1
@@ -14558,7 +14558,7 @@ Street 0
 said 0
 . 0
 
-Gorst 1
+Gorst 0
 's 0
 office 0
 said 0
@@ -14631,7 +14631,7 @@ the 0
 651-seat 0
 House 0
 of 0
-Commons 1
+Commons 0
 lower 0
 house 0
 of 0
@@ -14673,7 +14673,7 @@ attend 0
 the 0
 House 0
 of 0
-Commons 1
+Commons 0
 or 0
 as 0
 placing 0
@@ -14785,7 +14785,7 @@ for 0
 National 0
 Air 0
 Traffic 1
-Services 1
+Services 0
 Ltd 0
 ( 0
 NATS 0
@@ -14795,7 +14795,7 @@ subsidiary 0
 of 0
 the 0
 Civil 0
-Aviation 1
+Aviation 0
 Authority 0
 . 0
 
@@ -14906,7 +14906,7 @@ Chanderpaul 1
 10 0
 . 0
 
-Rain 1
+Rain 0
 earlier 0
 delayed 0
 the 0
@@ -14976,13 +14976,13 @@ Zealand 0
 -DOCSTART- 0
 
 Manitoba 0
-Pork 1
+Pork 0
 forward 0
 contract 0
 PM 0
 prices 0
 - 0
-Dec 1
+Dec 0
 6 0
 . 0
 
@@ -14990,7 +14990,7 @@ WINNIPEG 0
 1996-12-06 0
 
 Manitoba 0
-Pork 1
+Pork 0
 closing 0
 forward 0
 contract 0
@@ -15005,7 +15005,7 @@ lbs 0
 Cwt 1
 ) 0
 for 0
-Dec 1
+Dec 0
 6 0
 including 0
 minimum 0
@@ -15031,14 +15031,14 @@ AT 0
 1230 0
 CST 0
 
-Feb 1
+Feb 0
 97 0
 79.94 0
 79.67 0
 75.55 0
 77.01-81.80 0
 
-Mar 1
+Mar 0
 97 0
 76.37 0
 76.12 0
@@ -15059,7 +15059,7 @@ May 0
 72.97 0
 74.42-79.19 0
 
-Jun 1
+Jun 0
 97 0
 77.53 0
 77.24 0
@@ -15103,10 +15103,10 @@ Nov 0
 
 Note 0
 : 0
-Manitoba 1
+Manitoba 0
 Government 0
 Price 1
-Index 1
+Index 0
 ( 0
 C$ 0
 per 0
@@ -15118,7 +15118,7 @@ Dec 0
 4 0
 87.16 0
 
-Manitoba 1
+Manitoba 0
 's 0
 Hog 1
 Price 1
@@ -15137,10 +15137,10 @@ RATE 0
 : 0
 1.3570 0
 
-Source 1
+Source 0
 : 0
-Manitoba 1
-Pork 1
+Manitoba 0
+Pork 0
 . 0
 
 ( 0
@@ -15209,7 +15209,7 @@ ship 0
 loaded 0
 in 0
 Thunder 1
-Bay 1
+Bay 0
 , 0
 one 0
 waited 0
@@ -15253,7 +15253,7 @@ Rupert 1
 ( 0
 ( 0
 Gilbert 1
-Le 1
+Le 0
 Gras 1
 204 0
 947 0
@@ -15268,7 +15268,7 @@ York 0
 timecharter 0
 fixtures 0
 - 0
-Dec 1
+Dec 0
 6 0
 . 0
 
@@ -15306,7 +15306,7 @@ ore 0
 scrap 0
 fixtures 0
 - 0
-Dec 1
+Dec 0
 6 0
 . 0
 
@@ -15331,7 +15331,7 @@ fio 0
 / 0
 30,000 0
 China 0
-Steel 1
+Steel 0
 . 0
 
 -- 0
@@ -15370,7 +15370,7 @@ HEMISPHERE 0
 Danila 1
 28.5 0
 16/12 0
-Caribs 1
+Caribs 0
 / 0
 up 0
 W224 0
@@ -15415,7 +15415,7 @@ Ras 1
 Tanura 1
 / 0
 Red 0
-Sea 1
+Sea 0
 W46.50 0
 Mobil 1
 . 0
@@ -15803,7 +15803,7 @@ for 0
 Santa 1
 Fe 1
 Pacific 0
-Gold 1
+Gold 0
 Corp 0
 if 0
 Santa 1
@@ -16023,11 +16023,11 @@ immediately 0
 ruled 0
 out 0
 Barrick 0
-Gold 1
+Gold 0
 Corp 0
 and 0
 Bre-X 1
-Minerals 1
+Minerals 0
 Ltd 0
 as 0
 Santa 1
@@ -16078,7 +16078,7 @@ South 0
 America 0
 and 0
 Central 0
-Asia 1
+Asia 0
 presence 0
 , 0
 they 0
@@ -16125,7 +16125,7 @@ and 0
 Canada 0
 . 0
 
-Earnings 1
+Earnings 0
 in 0
 1995 0
 were 0
@@ -16153,7 +16153,7 @@ is 0
 headquartered 0
 Albuquerque 1
 , 0
-N.M. 1
+N.M. 0
 and 0
 reported 0
 1995 0
@@ -16498,7 +16498,7 @@ July 0
 
 OAKLAND 0
 , 0
-N.J. 1
+N.J. 0
 1996-12-06 0
 
 Russ 1
@@ -16723,7 +16723,7 @@ the 0
 eastern 0
 city 0
 of 0
-Goma 1
+Goma 0
 . 0
 
 If 0
@@ -16759,10 +16759,10 @@ of 0
 the 0
 government 0
 in 0
-Kinshasa 1
+Kinshasa 0
 and 0
 the 0
-Zairean 1
+Zairean 0
 rebels 0
 who 0
 control 0
@@ -16822,7 +16822,7 @@ leader 0
 Laurent 1
 Kabila 1
 in 0
-Goma 1
+Goma 0
 last 0
 week 0
 but 0
@@ -16866,7 +16866,7 @@ it 0
 might 0
 help 0
 the 0
-Zairean 1
+Zairean 0
 army 0
 regain 0
 control 0
@@ -17102,7 +17102,7 @@ the 0
 objections 0
 of 0
 the 0
-Zairean 1
+Zairean 0
 government 0
 , 0
 he 0
@@ -17161,7 +17161,7 @@ mandate 0
 is 0
 also 0
 under 0
-Chapter 1
+Chapter 0
 Seven 0
 to 0
 operate 0
@@ -17172,7 +17172,7 @@ Zaire 0
 " 0
 
 Under 0
-Chapter 1
+Chapter 0
 Seven 0
 of 0
 the 0
@@ -17198,7 +17198,7 @@ know 0
 their 0
 ( 0
 the 0
-Zairean 1
+Zairean 0
 government 0
 's 0
 ) 0
@@ -17234,11 +17234,11 @@ contacts 0
 , 0
 criticised 0
 by 0
-Kinshasa 1
+Kinshasa 0
 , 0
 with 0
 the 0
-Zairean 1
+Zairean 0
 rebels 0
 amounted 0
 to 0
@@ -17422,7 +17422,7 @@ PORT 0
 LOUIS 0
 1996-12-06 0
 
-Mauritian 1
+Mauritian 0
 authorities 0
 put 0
 the 0
@@ -17485,7 +17485,7 @@ knots 0
 Although 0
 not 0
 threatening 0
-Mauritius 1
+Mauritius 0
 directly 0
 , 0
 it 0
@@ -17518,7 +17518,7 @@ knots 0
 could 0
 blow 0
 over 0
-Mauritius 1
+Mauritius 0
 during 0
 the 0
 night 0
@@ -17629,7 +17629,7 @@ up 0
 the 0
 staff 0
 from 0
-Bangui 1
+Bangui 0
 and 0
 was 0
 heading 0
@@ -17834,7 +17834,7 @@ violence 0
 in 0
 the 0
 capital 0
-Bangui 1
+Bangui 0
 , 0
 a 0
 government 0
@@ -17857,7 +17857,7 @@ backing 0
 for 0
 the 0
 elected 0
-Bangui 1
+Bangui 0
 government 0
 but 0
 said 0
@@ -17949,7 +17949,7 @@ of 0
 the 0
 national 0
 Red 0
-Cross 1
+Cross 0
 , 0
 told 0
 Reuters 0
@@ -18075,7 +18075,7 @@ French 0
 troops 0
 based 0
 in 0
-Bangui 1
+Bangui 0
 . 0
 
 The 0
@@ -18167,7 +18167,7 @@ city 0
 districts 0
 while 0
 central 0
-Bangui 1
+Bangui 0
 , 0
 which 0
 is 0
@@ -18200,7 +18200,7 @@ to 0
 send 0
 a 0
 mission 0
-Bangui 1
+Bangui 0
 to 0
 seek 0
 ways 0
@@ -18225,7 +18225,7 @@ Blaise 1
 Compaore 1
 would 0
 visit 0
-Bangui 1
+Bangui 0
 " 0
 in 0
 the 0
@@ -18306,7 +18306,7 @@ his 0
 departure 0
 . 0
 
-Soldiers 1
+Soldiers 0
 staged 0
 mutinies 0
 in 0
@@ -18352,7 +18352,7 @@ city 0
 centre 0
 . 0
 
-Rebels 1
+Rebels 0
 accuse 0
 Patasse 1
 of 0
@@ -18557,7 +18557,7 @@ at 0
 CIS 0
 airports 0
 - 0
-Dec 1
+Dec 0
 6 0
 . 0
 
@@ -19079,7 +19079,7 @@ party 0
 the 0
 Democratic 0
 Left 1
-Alliance 1
+Alliance 0
 , 0
 says 0
 the 0
@@ -19164,7 +19164,7 @@ Livshits 1
 warned 0
 financially-troubled 0
 Norilsk 1
-Nickel 1
+Nickel 0
 on 0
 Friday 0
 that 0
@@ -19220,7 +19220,7 @@ at 0
 Moscow 0
 brokerage 0
 Rinaco 1
-Plus 1
+Plus 0
 and 0
 a 0
 Norilsk 1
@@ -19228,7 +19228,7 @@ watcher 0
 . 0
 " 0
 
-Livshits 1
+Livshits 0
 's 0
 words 0
 are 0
@@ -19353,8 +19353,8 @@ pressure 0
 from 0
 the 0
 International 0
-Monetary 1
-Fund 1
+Monetary 0
+Fund 0
 to 0
 boost 0
 tax 0
@@ -19451,7 +19451,7 @@ infrastructures 0
 in 0
 the 0
 icy 0
-Far 1
+Far 0
 North 0
 where 0
 Norilsk 1
@@ -19574,7 +19574,7 @@ quoted 0
 Livshits 1
 as 0
 telling 0
-Duma 1
+Duma 0
 deputies 0
 about 0
 Norilsk 1
@@ -19663,7 +19663,7 @@ Norilsk 1
 money 0
 . 0
 
-Norilsk 1
+Norilsk 0
 's 0
 new 0
 majority 0
@@ -19794,7 +19794,7 @@ Newsroom 0
 -DOCSTART- 0
 
 Estonian 0
-Tallinna 1
+Tallinna 0
 Pank 1
 11-mo 0
 net 0
@@ -19885,7 +19885,7 @@ billion 0
 kroons 0
 . 0
 
-Demand 1
+Demand 0
 deposits 0
 rose 0
 to 0
@@ -20142,7 +20142,7 @@ return 0
 to 0
 Kremlin 0
 for 0
-Dec 1
+Dec 0
 25 0
 - 0
 speaker 0
@@ -20365,7 +20365,7 @@ residence 0
 
 -DOCSTART- 0
 
-Bomb 1
+Bomb 0
 explodes 0
 outside 0
 home 0
@@ -20546,7 +20546,7 @@ told 0
 TASR 0
 . 0
 
-Gaulieder 1
+Gaulieder 0
 's 0
 family 0
 was 0
@@ -20582,7 +20582,7 @@ blast 0
 
 -DOCSTART- 0
 
-Bomb 1
+Bomb 0
 explodes 0
 at 0
 mosque 0
@@ -20686,7 +20686,7 @@ majority 0
 in 0
 Bulgaria 0
 are 0
-Christians 1
+Christians 0
 . 0
 
 The 0
@@ -20718,7 +20718,7 @@ rates 0
 end 0
 up 0
 before 0
-Dec 1
+Dec 0
 10 0
 tax 0
 payment 0
@@ -20919,7 +20919,7 @@ once 0
 we 0
 saw 0
 the 0
-Dow 1
+Dow 0
 ( 0
 Jones 1
 industrial 0
@@ -21208,7 +21208,7 @@ Ponce 1
 research 0
 director 0
 at 0
-Santander 1
+Santander 0
 . 0
 
 Traders 0
@@ -21393,7 +21393,7 @@ the 0
 Brazilian 0
 Plastic 1
 Surgery 1
-Society 1
+Society 0
 ( 0
 SBCP 0
 ) 0
@@ -21774,7 +21774,7 @@ said 0
 . 0
 " 0
 
-Beauty 1
+Beauty 0
 ideals 0
 and 0
 cultures 0
@@ -21853,7 +21853,7 @@ BUENOS 0
 AIRES 0
 1996-12-06 0
 
-Avg 1
+Avg 0
 December 0
 5 0
 price 0
@@ -21864,7 +21864,7 @@ Buenos 0
 Aires 0
 Quequen 1
 Rosario 1
-Bahia 1
+Bahia 0
 Blanca 1
 
 Oats 1
@@ -21937,7 +21937,7 @@ port 0
 shipping 0
 update 0
 for 0
-Dec 1
+Dec 0
 6 0
 . 0
 
@@ -22266,7 +22266,7 @@ Friday 0
 
 Rio 0
 de 1
-Janeiro 1
+Janeiro 0
 state 0
 university 0
 officials 0
@@ -22501,7 +22501,7 @@ he 0
 was 0
 confident 0
 the 0
-Chilean 1
+Chilean 0
 Congress 0
 would 0
 ratify 0
@@ -22548,7 +22548,7 @@ said 0
 Roger 1
 Atwood 1
 , 0
-Santiago 1
+Santiago 0
 newsroom 0
 +56-2-699-5595 0
 x211 0
@@ -22887,7 +22887,7 @@ Alatas 1
 replied 0
 : 0
 " 0
-Probably 1
+Probably 0
 , 0
 yes 0
 , 0
@@ -22927,7 +22927,7 @@ would 0
 also 0
 meet 0
 German 0
-Chancellor 1
+Chancellor 0
 Helmut 1
 Kohl 1
 in 0
@@ -23116,7 +23116,7 @@ near 0
 the 0
 Ranyon 1
 ( 0
-Rangoon 1
+Rangoon 0
 ) 0
 University 0
 early 0
@@ -23180,7 +23180,7 @@ the 0
 junction 0
 in 0
 northern 0
-Rangoon 1
+Rangoon 0
 , 0
 were 0
 taken 0
@@ -23221,7 +23221,7 @@ Insein 1
 prison 0
 in 0
 suburban 0
-Rangoon 1
+Rangoon 0
 . 0
 
 The 0
@@ -23230,7 +23230,7 @@ students 0
 , 0
 mostly 0
 from 0
-Rangoon 1
+Rangoon 0
 University 0
 , 0
 were 0
@@ -23307,7 +23307,7 @@ RANGOON 0
 
 About 0
 200 0
-Burmese 1
+Burmese 0
 students 0
 marched 0
 briefly 0
@@ -23316,10 +23316,10 @@ troubled 0
 Yangon 1
 Institute 0
 of 0
-Technology 1
+Technology 0
 in 0
 northern 0
-Rangoon 1
+Rangoon 0
 on 0
 Friday 0
 towards 0
@@ -23541,7 +23541,7 @@ by 0
 police 0
 in 0
 central 0
-Rangoon 1
+Rangoon 0
 . 0
 
 The 0
@@ -23827,7 +23827,7 @@ lakeside 0
 residence 0
 in 0
 central 0
-Rangoon 1
+Rangoon 0
 remained 0
 closed 0
 by 0
@@ -23892,7 +23892,7 @@ secretary 0
 of 0
 the 0
 International 0
-Confederation 1
+Confederation 0
 of 0
 Free 0
 Trade 0
@@ -24177,13 +24177,13 @@ Indonesia 0
 Malaysia 0
 , 0
 the 0
-Philippines 1
+Philippines 0
 , 0
 Singapore 0
 , 0
 Thailand 0
 and 0
-Vietnam 1
+Vietnam 0
 . 0
 
 The 0
@@ -24342,9 +24342,9 @@ Matthew 1
 said 0
 at 0
 the 0
-Asia 1
+Asia 0
 Rubber 1
-Markets 1
+Markets 0
 meeting 0
 here 0
 Indian 0
@@ -24479,7 +24479,7 @@ in 0
 2010/11 0
 . 0
 
-Natural 1
+Natural 0
 rubber 0
 production 0
 will 0
@@ -24814,7 +24814,7 @@ Note 0
 chief 0
 dealer 0
 at 0
-Sumitomo 1
+Sumitomo 0
 Bank 0
 . 0
 
@@ -24894,7 +24894,7 @@ either 0
 , 0
 " 0
 said 0
-Sumitomo 1
+Sumitomo 0
 's 0
 Note 0
 . 0
@@ -25174,7 +25174,7 @@ at 0
 Toyo 1
 Trust 0
 & 0
-Banking 1
+Banking 0
 Co 0
 . 0
 
@@ -25246,8 +25246,8 @@ Tanaka 1
 market 0
 strategist 0
 with 0
-Credit 1
-Suisse 1
+Credit 0
+Suisse 0
 in 0
 Tokyo 0
 . 0
@@ -25353,7 +25353,7 @@ BEIRUT 0
 1996-12-06 0
 
 A 0
-Lebanese 1
+Lebanese 0
 military 0
 court 0
 on 0
@@ -25413,7 +25413,7 @@ Lahd 1
 a 0
 69-year-old 0
 former 0
-Lebanese 1
+Lebanese 0
 army 0
 major-general 0
 , 0
@@ -25456,7 +25456,7 @@ on 0
 February 0
 16 0
 that 0
-Lebanese 1
+Lebanese 0
 authorities 0
 must 0
 drop 0
@@ -25517,7 +25517,7 @@ off 0
 a 0
 part 0
 of 0
-Lebanese 1
+Lebanese 0
 territory 0
 by 0
 violence 0
@@ -25532,14 +25532,14 @@ or 0
 trying 0
 to 0
 kill 0
-Lebanese 1
+Lebanese 0
 civilians 0
 by 0
 artillery 0
 shelling 0
 and 0
 kidnapping 0
-Lebanese 1
+Lebanese 0
 citizens 0
 for 0
 long 0
@@ -25561,7 +25561,7 @@ charged 0
 another 0
 89 0
 former 0
-Lebanese 1
+Lebanese 0
 army 0
 soldiers 0
 with 0
@@ -25629,7 +25629,7 @@ Israel 0
 has 0
 said 0
 the 0
-Lebanese 1
+Lebanese 0
 army 0
 must 0
 incorporate 0
@@ -25651,7 +25651,7 @@ peace 0
 . 0
 
 But 0
-Lebanese 1
+Lebanese 0
 political 0
 analysts 0
 have 0
@@ -25664,7 +25664,7 @@ of 0
 the 0
 question 0
 and 0
-Lebanese 1
+Lebanese 0
 authorities 0
 pre-empted 0
 the 0
@@ -25689,7 +25689,7 @@ Lahd 1
 " 0
 a 0
 great 0
-Lebanese 1
+Lebanese 0
 patriot 0
 " 0
 , 0
@@ -25843,7 +25843,7 @@ was 0
 slow 0
 in 0
 the 0
-Panhandle 1
+Panhandle 0
 area 0
 Friday 0
 , 0
@@ -25931,10 +25931,10 @@ lbs 0
 67.00 0
 . 0
 
-Confirmed 1
+Confirmed 0
 - 0
 9,300 0
-Week 1
+Week 0
 Ago 1
 - 0
 None 0
@@ -25962,7 +25962,7 @@ and 0
 hog 0
 slaughter 0
 - 0
-Dec 1
+Dec 0
 6 0
 . 0
 
@@ -25971,7 +25971,7 @@ daily 0
 livestock 0
 slaughter 0
 under 0
-Fed 1
+Fed 0
 inspection 0
 - 0
 USDA 0
@@ -26029,7 +26029,7 @@ est 0
 Same 0
 Period 1
 Last 0
-Week 1
+Week 0
 ( 0
 est 0
 ) 0
@@ -26097,7 +26097,7 @@ to 0
 rounding 0
 . 0
 
-Previous 1
+Previous 0
 day 0
 estimated 0
 Steer 1
@@ -26153,7 +26153,7 @@ AAA 0
 / 0
 AA- 0
 
-Delivery 1
+Delivery 0
 Date 1
 : 0
 12/16/1996 0
@@ -26161,10 +26161,10 @@ Date 1
 FSA 0
 INSURED 0
 
-Maturity 1
-Balance 1
-Coupon 1
-List 1
+Maturity 0
+Balance 0
+Coupon 0
+List 0
 
 12/15/2000 0
 1,250M 0
@@ -26245,9 +26245,9 @@ Street 0
 Bank 0
 and 0
 Trust 0
-Company 1
+Company 0
 
-Prudential 1
+Prudential 0
 Securities 0
 Incorporated 1
 
@@ -26257,7 +26257,7 @@ Incorporated 1
 First 0
 Union 0
 Capital 0
-Markets 1
+Markets 0
 Corp. 0
 - 0
 NJ 0
@@ -26284,7 +26284,7 @@ killing 0
 
 TALLAHASSEE 0
 , 0
-Fla. 1
+Fla. 0
 1996-12-06 0
 
 Fourteen 1
@@ -26364,7 +26364,7 @@ Lawhon 1
 
 Speaking 0
 in 0
-Arabic 1
+Arabic 0
 , 0
 Mills 1
 made 0
@@ -26587,11 +26587,11 @@ Thursday 0
 , 0
 the 0
 11th 0
-Circuit 1
+Circuit 0
 U.S. 0
 Court 0
 of 0
-Appeals 1
+Appeals 0
 in 0
 Atlanta 0
 denied 0
@@ -26610,7 +26610,7 @@ Mills 1
 and 0
 accomplice 0
 Michael 1
-Frederick 1
+Frederick 0
 knocked 0
 on 0
 the 0
@@ -26666,7 +26666,7 @@ run 0
 away 0
 . 0
 
-Frederick 1
+Frederick 0
 is 0
 serving 0
 a 0
@@ -26682,7 +26682,7 @@ grain 0
 freight 0
 fixtures 0
 - 0
-Dec 1
+Dec 0
 5 0
 . 0
 
@@ -26719,7 +26719,7 @@ Desk 0
 -DOCSTART- 0
 
 Iowa-S 1
-Minn 1
+Minn 0
 fed 0
 cattle 0
 market 0
@@ -26754,7 +26754,7 @@ Trade 0
 slow 0
 . 0
 
-Demand 1
+Demand 0
 and 0
 seller 0
 interest 0
@@ -26791,7 +26791,7 @@ Basis 1
 weight 0
 only 0
 ) 0
-Compared 1
+Compared 0
 Thursdays 1
 Close 0
 - 0
@@ -26861,10 +26861,10 @@ no 0
 sales 0
 . 0
 
-Confirmed 1
+Confirmed 0
 - 0
 None 0
-Week 1
+Week 0
 Ago 1
 - 0
 800 0
@@ -26878,7 +26878,7 @@ to 0
 Date 1
 - 0
 None 0
-Week 1
+Week 0
 Ago 1
 - 0
 800 0
@@ -26911,7 +26911,7 @@ years 0
 
 APPLETON 0
 , 0
-Wis 1
+Wis 0
 . 0
 
 1996-12-06 0
@@ -26966,9 +26966,9 @@ Thursday 0
 , 0
 Outagmie 1
 County 0
-Circuit 1
+Circuit 0
 Court 0
-Judge 1
+Judge 0
 Dennis 1
 Luebke 1
 said 0
@@ -27099,10 +27099,10 @@ weekly 0
 
 CHICAGO 0
 , 0
-Dec 1
+Dec 0
 6 0
 ( 0
-Reuter 1
+Reuter 0
 ) 0
 Statistics 0
 for 0
@@ -27119,7 +27119,7 @@ tonnes 0
 
 - 0
 Canadian 0
-Grain 1
+Grain 0
 Commission 0
 
 Visible 1
@@ -27129,14 +27129,14 @@ Deliveries 1
 
 Curr 1
 Wk 1
-Yr 1
+Yr 0
 Ago 1
 Curr 1
 Wk 1
-Yr 1
+Yr 0
 to 0
 Date 1
-Yr 1
+Yr 0
 Ago 1
 
 Wheat 0
@@ -27202,19 +27202,19 @@ Total 0
 13050.2 0
 11979.6 0
 
-Exports 1
-Domestic 1
+Exports 0
+Domestic 0
 Disappearance 1
 
 Curr 1
 Wk 1
 YTD 0
-Yr 1
+Yr 0
 Ago 1
 Curr 1
 Wk 1
 YTD 0
-Yr 1
+Yr 0
 Ago 1
 
 Wheat 0
@@ -27317,7 +27317,7 @@ Flaxseed 1
 Canola 1
 Corn 1
 
-Exports 1
+Exports 0
 29,200 0
 17,200 0
 7,700 0
@@ -27358,7 +27358,7 @@ YORK 0
 
 NYMEX 0
 Henry 1
-Hub 1
+Hub 0
 natgas 0
 futures 0
 settled 0
@@ -27416,7 +27416,7 @@ $ 0
 3.46 0
 . 0
 
-Feb 1
+Feb 0
 settled 0
 down 0
 22 0
@@ -27538,7 +27538,7 @@ November 0
 21 0
 . 0
 
-Resistance 1
+Resistance 0
 was 0
 pegged 0
 at 0
@@ -27600,7 +27600,7 @@ said 0
 an 0
 estimated 0
 35,662 0
-Hub 1
+Hub 0
 contracts 0
 traded 0
 , 0
@@ -27859,7 +27859,7 @@ Two 0
 barges 0
 next 0
 week 0
-Illinois 1
+Illinois 0
 bid 0
 at 0
 a 0
@@ -27906,7 +27906,7 @@ of 0
 January 0
 5 0
 , 0
-Illinois 1
+Illinois 0
 , 0
 offered 0
 five 0
@@ -27958,7 +27958,7 @@ each 0
 week 0
 May-August 1
 , 0
-Illinois 1
+Illinois 0
 , 0
 offered 0
 at 0
@@ -28051,7 +28051,7 @@ Trade 0
 - 0
 
 Receipts 0
-Shipments 1
+Shipments 0
 
 Wheat 0
 
@@ -28148,7 +28148,7 @@ and 0
 will 0
 have 0
 one 0
-Dec. 1
+Dec. 0
 13 0
 , 0
 the 0
@@ -28195,7 +28195,7 @@ the 0
 press 0
 . 0
 
-White 1
+White 0
 House 0
 spokesman 0
 Mike 1
@@ -28272,7 +28272,7 @@ Ariz 1
 
 Action 0
 Performance 1
-Cos 1
+Cos 0
 Inc 0
 said 0
 Friday 0
@@ -28286,7 +28286,7 @@ Traditions 1
 Ltd 0
 and 0
 Creative 1
-Marketing 1
+Marketing 0
 & 0
 Promotions 1
 Inc 0
@@ -28405,7 +28405,7 @@ Friday 0
 
 The 0
 Humane 1
-Society 1
+Society 0
 of 0
 the 0
 United 0
@@ -28460,7 +28460,7 @@ Glencoe 1
 Animal 1
 Hospital 0
 in 0
-Columbus 1
+Columbus 0
 , 0
 Ohio 0
 , 0
@@ -28492,7 +28492,7 @@ on 0
 them 0
 . 0
 
-Dogs 1
+Dogs 0
 and 0
 children 0
 do 0
@@ -28504,7 +28504,7 @@ an 0
 interaction 0
 . 0
 
-Let 1
+Let 0
 's 0
 respect 0
 their 0
@@ -28717,7 +28717,7 @@ away 0
 -DOCSTART- 0
 
 Iowa-S 1
-Minn 1
+Minn 0
 feedlot 0
 cattle 0
 market 0
@@ -28792,7 +28792,7 @@ established 0
 Thursday 0
 . 0
 
-Demand 1
+Demand 0
 limited 0
 . 0
 
@@ -28807,7 +28807,7 @@ USDA 0
 Thursday 0
 200 0
 Last 0
-Week 1
+Week 0
 Holiday 1
 Last 0
 Year 0
@@ -28827,12 +28827,12 @@ Wk 1
 Sm 1
 Pd 1
 Lst 1
-Yr 1
+Yr 0
 N 0
 / 0
 A 0
 
-Dressed 1
+Dressed 0
 Basis 1
 Delivered 1
 not 0
@@ -28840,7 +28840,7 @@ well 0
 tested 0
 . 0
 
-Dressed 1
+Dressed 0
 Basis 1
 Steers 1
 : 0
@@ -28859,7 +28859,7 @@ early 0
 114.00 0
 . 0
 
-Dressed 1
+Dressed 0
 Basis 1
 Heifers 1
 : 0
@@ -28887,8 +28887,8 @@ U.N. 0
 post 0
 . 0
 
-Evelyn 1
-Leopold 1
+Evelyn 0
+Leopold 0
 
 UNITED 0
 NATIONS 0
@@ -28948,7 +28948,7 @@ Ahmedou 1
 Ould 1
 Abdallah 1
 of 0
-Mauritania 1
+Mauritania 0
 , 0
 the 0
 former 0
@@ -29006,7 +29006,7 @@ the 0
 Ivory 0
 Coast 0
 , 0
-Mauritania 1
+Mauritania 0
 and 0
 Niger 1
 have 0
@@ -29129,7 +29129,7 @@ The 0
 United 0
 States 0
 on 0
-Nov. 1
+Nov. 0
 19 0
 vetoed 0
 his 0
@@ -29336,7 +29336,7 @@ constitution 0
 
 -DOCSTART- 0
 
-Mussolini 1
+Mussolini 0
 's 0
 granddaughter 0
 rejoins 0
@@ -29369,7 +29369,7 @@ rejoined 0
 the 0
 far-right 0
 National 0
-Alliance 1
+Alliance 0
 ( 0
 AN 0
 ) 0
@@ -29459,7 +29459,7 @@ AN 0
 leader 0
 in 0
 the 0
-Chamber 1
+Chamber 0
 of 0
 Deputies 1
 ( 0
@@ -29526,7 +29526,7 @@ who 0
 sits 0
 in 0
 the 0
-Chamber 1
+Chamber 0
 , 0
 told 0
 La 0
@@ -29624,7 +29624,7 @@ the 0
 northern 0
 city 0
 of 0
-Hanover 1
+Hanover 0
 on 0
 the 0
 day 0
@@ -29785,7 +29785,7 @@ in 0
 the 0
 so-called 0
 Europe 0
-Agreement 1
+Agreement 0
 between 0
 the 0
 EU 0
@@ -29964,7 +29964,7 @@ a 0
 mosque 0
 by 0
 a 0
-Hindu 1
+Hindu 0
 mob 0
 in 0
 1992 0
@@ -29973,7 +29973,7 @@ in 0
 Members 0
 of 0
 the 0
-Hindu 1
+Hindu 0
 nationalist 0
 Bharatiya 1
 Janata 1
@@ -30100,7 +30100,7 @@ BJP 0
 backs 0
 a 0
 hardline 0
-Hindu 1
+Hindu 0
 campaign 0
 to 0
 build 0
@@ -30219,7 +30219,7 @@ products 0
 
 Note 0
 - 0
-Figures 1
+Figures 0
 are 0
 in 0
 thousands 0
@@ -30333,7 +30333,7 @@ Peak 1
 tones 0
 coal 0
 Hay 1
-Point 1
+Point 0
 or 0
 Newcastle 0
 / 0
@@ -30351,16 +30351,16 @@ respectively 0
 28,000 0
 shinc 0
 China 0
-Steel 1
+Steel 0
 . 0
 
-Royal 0
+Royal 1
 Clipper 1
 - 0
 77,000 0
 tonnes 0
 coal 0
-Maracaibo 1
+Maracaibo 0
 / 0
 Fos 1
 19/12-2/1 0
@@ -30397,7 +30397,7 @@ shinc 0
 30,000 0
 shinc 0
 China 0
-Steel 1
+Steel 0
 . 0
 
 -DOCSTART- 0
@@ -30405,7 +30405,7 @@ Steel 1
 UK 0
 bookmakers 0
 lengthen 0
-Conservative 1
+Conservative 0
 victory 0
 odds 0
 . 0
@@ -30427,7 +30427,7 @@ the 0
 odds 0
 of 0
 a 0
-Conservative 1
+Conservative 0
 victory 0
 in 0
 the 0
@@ -30494,7 +30494,7 @@ meagre 0
 bond 0
 returns 0
 - 0
-Salomon 1
+Salomon 0
 . 0
 
 LONDON 0
@@ -30515,8 +30515,8 @@ on 0
 government 0
 bonds 0
 , 0
-Salomon 1
-Brothers 1
+Salomon 0
+Brothers 0
 said 0
 on 0
 Friday 0
@@ -30608,7 +30608,7 @@ supply 0
 
 Returns 1
 on 0
-Treasuries 1
+Treasuries 0
 were 0
 also 0
 in 0
@@ -30657,7 +30657,7 @@ percent 0
 . 0
 
 German 0
-Bunds 1
+Bunds 0
 were 0
 not 0
 much 0
@@ -30689,8 +30689,8 @@ been 0
 top 0
 performers 0
 in 0
-Salomon 1
-Brothers 1
+Salomon 0
+Brothers 0
 ' 0
 league 0
 table 0
@@ -30912,7 +30912,7 @@ Arabia 0
 Arabian 1
 Light 1
 , 0
-Dubai 1
+Dubai 0
 of 0
 the 0
 UAE 0
@@ -30952,7 +30952,7 @@ LONDON 0
 
 Relations 0
 between 0
-Chancellor 1
+Chancellor 0
 of 0
 the 0
 Exchequer 1
@@ -31110,7 +31110,7 @@ route 0
 to 0
 Ireland 0
 from 0
-Michigan 1
+Michigan 0
 crashed 0
 on 0
 approach 0
@@ -31268,7 +31268,7 @@ in 0
 Grand 0
 Rapids 1
 , 0
-Michigan 1
+Michigan 0
 , 0
 and 0
 was 0
@@ -31298,7 +31298,7 @@ yet 0
 known 0
 . 0
 
-Investigators 1
+Investigators 0
 were 0
 due 0
 to 0
@@ -31569,7 +31569,7 @@ Jerusalem 0
 . 0
 
 The 0
-Palestine 1
+Palestine 0
 Liberation 0
 Organisation 0
 ( 0
@@ -32165,7 +32165,7 @@ very 0
 slow 0
 in 0
 the 0
-Panhandle 1
+Panhandle 0
 area 0
 Thursday 0
 . 0
@@ -32192,7 +32192,7 @@ USDA 0
 
 Thursday 0
 200 0
-Week 1
+Week 0
 Ago 1
 Holiday 1
 Year 0
@@ -32203,7 +32203,7 @@ Wk 1
 to 0
 Date 1
 69,100 0
-Week 1
+Week 0
 Ago 1
 58,100 0
 Year 0
@@ -32320,7 +32320,7 @@ year 0
 ago 0
 47,200 0
 
-Inquiry 1
+Inquiry 0
 good 0
 , 0
 demand 0
@@ -32385,7 +32385,7 @@ lbs 0
 -DOCSTART- 0
 
 Delphis 1
-Hanover 1
+Hanover 0
 weekly 0
 municipal 0
 bond 0
@@ -32393,17 +32393,17 @@ yields 0
 . 0
 
 Delphis 1
-Hanover 1
+Hanover 0
 weekly 0
 muni 0
 bond 0
 yields 0
 calculated 0
-Dec 1
+Dec 0
 5 0
 
 Aaa 1
-Aa 1
+Aa 0
 A 0
 Baa 1
 
@@ -32481,7 +32481,7 @@ Baa 1
 previous 0
 calculation 0
 on 0
-Nov 1
+Nov 0
 27 0
 
 -- 0
@@ -32925,7 +32925,7 @@ Tunis 1
 and 0
 the 0
 former 0
-Palestine 1
+Palestine 0
 Liberation 0
 Organisation 0
 headquarters 0
@@ -33111,7 +33111,7 @@ opponents 0
 
 ALBUQUERQUE 0
 , 0
-N.M. 1
+N.M. 0
 1996-12-05 0
 
 A 0
@@ -33226,7 +33226,7 @@ he 0
 attends 0
 . 0
 
-Cito 1
+Cito 0
 's 0
 father 0
 , 0
@@ -33452,7 +33452,7 @@ week 0
 . 0
 " 0
 
-Attempts 1
+Attempts 0
 by 0
 copyright-based 0
 industries 0
@@ -33552,10 +33552,10 @@ lobbyist 0
 heading 0
 the 0
 Washington-based 0
-Consumer 1
-Project 1
+Consumer 0
+Project 0
 on 0
-Technology 1
+Technology 0
 . 0
 
 " 0
@@ -33687,7 +33687,7 @@ the 0
 Internet 0
 . 0
 
-Mongolia 1
+Mongolia 0
 's 0
 state 0
 copyright 0
@@ -33728,7 +33728,7 @@ money 0
 for 0
 Internet 0
 in 0
-Mongolia 1
+Mongolia 0
 , 0
 " 0
 he 0
@@ -33851,7 +33851,7 @@ vice-president 0
 of 0
 the 0
 Information 0
-Technology 1
+Technology 0
 Association 0
 of 0
 America 0
@@ -34071,7 +34071,7 @@ government 0
 troops 0
 and 0
 ethnic 0
-Tutsi 1
+Tutsi 0
 rebels 0
 . 0
 
@@ -34153,7 +34153,7 @@ of 0
 nuns 0
 , 0
 seven 0
-Italians 1
+Italians 0
 and 0
 six 0
 Zaireans 1
@@ -34297,7 +34297,7 @@ a 0
 teacher 0
 . 0
 
-Investigators 1
+Investigators 0
 have 0
 said 0
 the 0
@@ -34436,7 +34436,7 @@ a 0
 promise 0
 . 0
 
-Let 1
+Let 0
 's 0
 march 0
 together 0
@@ -34518,7 +34518,7 @@ of 0
 a 0
 group 0
 of 0
-Italians 1
+Italians 0
 who 0
 had 0
 campaigned 0
@@ -34560,7 +34560,7 @@ were 0
 outnumbered 0
 by 0
 other 0
-Italians 1
+Italians 0
 who 0
 waved 0
 tricolour 0
@@ -34623,7 +34623,7 @@ march 0
 along 0
 the 0
 Po 1
-River 1
+River 0
 in 0
 September 0
 , 0
@@ -34639,7 +34639,7 @@ self-styled 0
 " 0
 Republic 0
 of 0
-Padania 1
+Padania 0
 " 0
 , 0
 flopped 0
@@ -34661,7 +34661,7 @@ COPENHAGEN 0
 1996-12-06 0
 
 A 0
-Reuter 1
+Reuter 0
 consensus 0
 survey 0
 sees 0
@@ -34748,7 +34748,7 @@ Soeren 1
 Linding 1
 Jakobsen 1
 , 0
-Copenhagen 1
+Copenhagen 0
 newsroom 0
 +45 0
 33969650 0
@@ -35028,13 +35028,13 @@ Port 0
 conditions 0
 update 0
 - 0
-Lloyds 1
-Shipping 1
+Lloyds 0
+Shipping 0
 . 0
 
 GREECE 0
 , 0
-Dec 1
+Dec 0
 5 0
 - 0
 Greek 0
@@ -35057,7 +35057,7 @@ giving 0
 the 0
 government 0
 until 0
-Feb 1
+Feb 0
 1 0
 to 0
 introduce 0
@@ -35110,7 +35110,7 @@ association 0
 said 0
 . 0
 
-Imports 1
+Imports 0
 of 0
 1.04 0
 million 0
@@ -35147,7 +35147,7 @@ in 0
 July 0
 , 0
 El 1
-Salvador 1
+Salvador 0
 160,553 0
 ( 0
 129,184 0
@@ -35193,7 +35193,7 @@ newsroom 0
 -DOCSTART- 0
 
 Munich 0
-Re 1
+Re 0
 says 0
 to 0
 split 0
@@ -35243,7 +35243,7 @@ group 0
 known 0
 as 0
 Munich 0
-Re 1
+Re 0
 , 0
 plans 0
 to 0
@@ -35285,7 +35285,7 @@ par 0
 value 0
 of 0
 Munich 0
-Re 1
+Re 0
 's 0
 shares 0
 to 0
@@ -35310,7 +35310,7 @@ value 0
 . 0
 
 Munich 0
-Re 1
+Re 0
 's 0
 registered 0
 shares 0
@@ -35496,7 +35496,7 @@ Thursday 0
 There 0
 was 0
 no 0
-Bundesbank 1
+Bundesbank 0
 intervention 0
 . 0
 
@@ -35520,7 +35520,7 @@ LONDON 0
 The 0
 John 1
 Lewis 1
-Partnership 1
+Partnership 0
 said 0
 its 0
 UK 0
@@ -35660,7 +35660,7 @@ $ 0
 . 0
 
 One 0
-Global 1
+Global 0
 Depository 1
 Receipt 1
 represents 0
@@ -35698,7 +35698,7 @@ member 0
 of 0
 the 0
 ruling 0
-Conservative 1
+Conservative 0
 party 0
 said 0
 on 0
@@ -35820,7 +35820,7 @@ him 0
 . 0
 " 0
 
-Marlow 1
+Marlow 0
 's 0
 comment 0
 come 0
@@ -35933,7 +35933,7 @@ minister 0
 . 0
 
 Pro-European 1
-Conservative 1
+Conservative 0
 MP 0
 Edwina 1
 Currie 1
@@ -36100,7 +36100,7 @@ lead 0
 it 0
 . 0
 
-Critics 1
+Critics 0
 say 0
 that 0
 if 0
@@ -36201,7 +36201,7 @@ having 0
 sex 0
 with 0
 a 0
-Cambodian 1
+Cambodian 0
 boy 0
 under 0
 16 0
@@ -36366,7 +36366,7 @@ wrong 0
 house 0
 , 0
 " 0
-Judge 1
+Judge 0
 Michael 1
 Grove 1
 said 0
@@ -36781,7 +36781,7 @@ social 0
 development 0
 conference 0
 in 0
-Copenhagen 1
+Copenhagen 0
 last 0
 year 0
 and 0
@@ -36858,7 +36858,7 @@ national 0
 planning 0
 office 0
 of 0
-Papua 1
+Papua 0
 New 0
 Guinea 0
 from 0
@@ -36890,7 +36890,7 @@ RANGOON 0
 A 0
 group 0
 of 0
-Burmese 1
+Burmese 0
 students 0
 on 0
 Friday 0
@@ -36901,7 +36901,7 @@ the 0
 Yangon 1
 Institute 0
 of 0
-Technology 1
+Technology 0
 ( 0
 YIT 0
 ) 0
@@ -36910,7 +36910,7 @@ the 0
 northern 0
 outskirts 0
 of 0
-Rangoon 1
+Rangoon 0
 and 0
 moved 0
 toward 0
@@ -37016,7 +37016,7 @@ Shwe 1
 Dagon 1
 pagoda 0
 in 0
-Rangoon 1
+Rangoon 0
 . 0
 
 They 0
@@ -37100,7 +37100,7 @@ loading 0
 and 0
 movements 0
 at 0
-Dec 1
+Dec 0
 06 0
 . 0
 
@@ -37109,7 +37109,7 @@ BANGKOK 0
 
 The 0
 Thai 0
-Commerce 1
+Commerce 0
 Ministry 0
 detailed 0
 rice 0
@@ -37143,7 +37143,7 @@ of 0
 Loine 1
 19/11/96 0
 10,000 0
-Philippines 1
+Philippines 0
 
 Deligst 1
 20/11/96 0
@@ -37196,16 +37196,16 @@ Tong 1
 Shun 1
 25/11/96 0
 3,000 0
-Vietnam 1
+Vietnam 0
 
 But 0
 2 0
 27/11/96 0
 5,000 0
-Burma 1
+Burma 0
 
 -- 0
-Bangkok 1
+Bangkok 0
 newsroom 0
 ( 0
 662 0
@@ -37235,7 +37235,7 @@ east 0
 China 0
 city 0
 of 0
-Tianjin 1
+Tianjin 0
 choked 0
 and 0
 almost 0
@@ -37383,7 +37383,7 @@ $ 0
 million 0
 by 0
 Hyundai 0
-Heavy 1
+Heavy 0
 pushed 0
 the 0
 dollar 0
@@ -37497,7 +37497,7 @@ Office 0
 , 0
 the 0
 Civil 0
-Aviation 1
+Aviation 0
 Administration 0
 of 0
 China 0
@@ -37506,7 +37506,7 @@ the 0
 General 0
 Administration 0
 of 0
-Customs 1
+Customs 0
 and 0
 other 0
 authorities 0
@@ -37600,7 +37600,7 @@ TOKYO 0
 Japan 0
 's 0
 Economic 0
-Planning 1
+Planning 0
 Agency 0
 has 0
 not 0
@@ -37757,7 +37757,7 @@ LATEST 0
 ACTUAL 0
 
 ( 0
-Parent 1
+Parent 0
 ) 0
 FORECAST 0
 YEAR-AGO 0
@@ -37780,7 +37780,7 @@ yen 0
 127.64 0
 yen 0
 
-Ord 1
+Ord 0
 div 0
 30.00 0
 yen 0
@@ -37821,11 +37821,11 @@ JAKARTA 0
 Canada 0
 's 0
 Bre-X 1
-Minerals 1
+Minerals 0
 Ltd 0
 and 0
 Barrick 0
-Gold 1
+Gold 0
 Corp 0
 are 0
 to 0
@@ -37930,9 +37930,9 @@ talks 0
 on 0
 Thursday 0
 with 0
-Mines 1
+Mines 0
 and 0
-Energy 1
+Energy 0
 Ministry 0
 Secretary-General 0
 Umar 1
@@ -37967,9 +37967,9 @@ submit 0
 to 0
 the 0
 Indonesian 0
-Mines 1
+Mines 0
 and 0
-Energy 1
+Energy 0
 Ministry 0
 a 0
 feasibility 0
@@ -38178,9 +38178,9 @@ been 0
 set 0
 by 0
 the 0
-Mines 1
+Mines 0
 and 0
-Energy 1
+Energy 0
 Ministry 0
 for 0
 Bre-X 1
@@ -38343,7 +38343,7 @@ deal 0
 with 0
 PT 0
 Panutan 1
-Duta 1
+Duta 0
 of 0
 the 0
 Panutan 1
@@ -38437,7 +38437,7 @@ TOKYO 0
 1996-12-06 0
 
 Honda 0
-Motor 1
+Motor 0
 Co 0
 Ltd 0
 said 0
@@ -38738,7 +38738,7 @@ the 0
 Institute 0
 of 0
 Policy 1
-Studies 1
+Studies 0
 ( 0
 ISEAS 0
 ) 0
@@ -38854,7 +38854,7 @@ its 0
 predecessor 0
 the 0
 General 0
-Agreement 1
+Agreement 0
 on 0
 Tariffs 1
 and 0
@@ -39207,7 +39207,7 @@ TOKYO 0
 1996-12-06 0
 
 Nippon 1
-Telegraph 1
+Telegraph 0
 and 0
 Telephone 1
 Corp 0
@@ -39297,9 +39297,9 @@ business 0
 
 Earlier 0
 , 0
-Posts 1
+Posts 0
 and 0
-Telecommunications 1
+Telecommunications 0
 Minister 0
 Hisao 1
 Horinouchi 1
@@ -39500,7 +39500,7 @@ TOPS 0
 recently 0
 launched 0
 in 0
-Asia 1
+Asia 0
 . 0
 
 " 0
@@ -39547,7 +39547,7 @@ as 0
 its 0
 activities 0
 in 0
-Asia 1
+Asia 0
 , 0
 Dutch 0
 retail 0
@@ -39654,7 +39654,7 @@ Nation 1
 : 0
 Russia 0
 
-Previous 1
+Previous 0
 World 0
 Cup 0
 victories 0
@@ -39919,7 +39919,7 @@ U.S. 0
 1:19.39 0
 
 25. 0
-Hilary 1
+Hilary 0
 Lindh 1
 ( 0
 U.S. 0
@@ -40127,7 +40127,7 @@ Pat 1
 Hurst 1
 and 0
 Scott 1
-McCarron 0
+McCarron 1
 were 0
 tied 0
 for 0
@@ -40137,7 +40137,7 @@ with 0
 the 0
 team 0
 of 0
-Donna 1
+Donna 0
 Andrews 1
 and 0
 Mike 1
@@ -40160,7 +40160,7 @@ champions 0
 Kelli 1
 Kuehne 1
 and 0
-Tiger 1
+Tiger 0
 Woods 1
 were 0
 another 0
@@ -40171,7 +40171,7 @@ at 0
 130 0
 . 0
 
-Defending 1
+Defending 0
 champions 0
 Beth 1
 Daniel 1
@@ -40233,7 +40233,7 @@ Nation 1
 : 0
 Austria 0
 
-Previous 1
+Previous 0
 victories 0
 ( 0
 two 0
@@ -40467,7 +40467,7 @@ Germany 0
 
 19= 0
 Kate 1
-Pace 1
+Pace 0
 Lindsay 1
 ( 0
 Canada 0
@@ -40833,7 +40833,7 @@ Austria 0
 ) 0
 27 0
 
-Nation 1
+Nation 0
 's 0
 Cup 0
 standings 0
@@ -41077,7 +41077,7 @@ France 0
 
 21. 0
 Kate 1
-Pace 1
+Pace 0
 Lindsay 1
 ( 0
 Canada 0
@@ -41093,7 +41093,7 @@ Italy 0
 1:50.65 0
 
 23. 0
-Hilary 1
+Hilary 0
 Lindh 1
 ( 0
 United 0
@@ -41532,11 +41532,11 @@ a 0
 second 0
 behind 0
 the 0
-Italians 1
+Italians 0
 . 0
 
 The 0
-Canadians 1
+Canadians 0
 , 0
 winners 0
 of 0
@@ -42228,13 +42228,13 @@ Province 0
 now 0
 renamed 0
 Uttar 1
-Pradesh 1
+Pradesh 0
 , 0
 in 0
 India 0
 's 0
 Ranji 1
-Trophy 1
+Trophy 0
 national 0
 championship 0
 and 0
@@ -42529,7 +42529,7 @@ Canada 0
 
 5. 0
 Jacqui 1
-Cooper 1
+Cooper 0
 ( 0
 Australia 0
 ) 0
@@ -42857,7 +42857,7 @@ Indonesia 0
 15-8 0
 
 Sun 0
-Jun 1
+Jun 0
 ( 0
 China 0
 ) 0
@@ -43412,7 +43412,7 @@ and 0
 fog 0
 on 0
 Whistler 1
-Mountain 1
+Mountain 0
 , 0
 leaving 0
 the 0
@@ -43587,7 +43587,7 @@ Rangers 0
 Paul 1
 Wright 1
 ( 0
-Kilmarnock 1
+Kilmarnock 0
 ) 0
 , 0
 Ally 1
@@ -43621,7 +43621,7 @@ Darren 1
 Jackson 1
 
 ( 0
-Hibernian 1
+Hibernian 0
 ) 0
 
 5 0
@@ -43650,7 +43650,7 @@ Robert 1
 
 Winters 1
 ( 0
-Dundee 1
+Dundee 0
 United 0
 ) 0
 , 0
@@ -43714,7 +43714,7 @@ Newcastle 0
 8 0
 - 0
 Matthew 1
-Le 1
+Le 0
 Tissier 1
 ( 0
 Southampton 0
@@ -43791,7 +43791,7 @@ Liverpool 0
 ) 0
 , 0
 Steve 1
-McManaman 0
+McManaman 1
 ( 0
 Liverpool 0
 ) 0
@@ -43999,7 +43999,7 @@ Irish 0
 Orrell 1
 22 0
 West 0
-Hartlepool 1
+Hartlepool 0
 15 0
 
 Wasps 1
@@ -44116,7 +44116,7 @@ Raith 0
 
 Kilmarnock 0
 0 0
-Dundee 1
+Dundee 0
 United 0
 2 0
 ( 0
@@ -44167,7 +44167,7 @@ McCoist 1
 Laudrup 1
 83 0
 ) 0
-Hibernian 1
+Hibernian 0
 3 0
 ( 0
 Wright 1
@@ -44658,7 +44658,7 @@ Hibernian 0
 25 0
 18 0
 
-Dundee 1
+Dundee 0
 United 0
 15 0
 4 0
@@ -44717,7 +44717,7 @@ Johnstone 0
 8 0
 38 0
 
-Falkirk 1
+Falkirk 0
 17 0
 9 0
 2 0
@@ -44735,7 +44735,7 @@ Airdrieonians 0
 16 0
 26 0
 
-Dundee 1
+Dundee 0
 16 0
 7 0
 5 0
@@ -44754,7 +44754,7 @@ Partick 0
 24 0
 
 St 0
-Mirren 1
+Mirren 0
 16 0
 7 0
 2 0
@@ -44860,7 +44860,7 @@ Stenhousemuir 0
 12 0
 17 0
 
-Stranraer 1
+Stranraer 0
 15 0
 5 0
 2 0
@@ -44878,7 +44878,7 @@ Dumbarton 0
 29 0
 16 0
 
-Brechin 1
+Brechin 0
 16 0
 3 0
 6 0
@@ -44899,7 +44899,7 @@ Berwick 0
 Division 0
 Three 0
 
-Montrose 1
+Montrose 0
 17 0
 9 0
 3 0
@@ -44928,7 +44928,7 @@ County 0
 23 0
 27 0
 
-Alloa 1
+Alloa 0
 16 0
 7 0
 4 0
@@ -44937,7 +44937,7 @@ Alloa 1
 21 0
 25 0
 
-Cowdenbeath 1
+Cowdenbeath 0
 15 0
 7 0
 3 0
@@ -44955,7 +44955,7 @@ Albion 0
 17 0
 24 0
 
-Forfar 1
+Forfar 0
 15 0
 6 0
 4 0
@@ -45330,7 +45330,7 @@ Swindon 0
 28 0
 29 0
 
-Charlton 1
+Charlton 0
 21 0
 9 0
 2 0
@@ -45704,7 +45704,7 @@ Wigan 0
 24 0
 40 0
 
-Carlisle 1
+Carlisle 0
 22 0
 11 0
 7 0
@@ -45785,7 +45785,7 @@ Lincoln 1
 33 0
 30 0
 
-Chester 1
+Chester 0
 21 0
 8 0
 6 0
@@ -45812,7 +45812,7 @@ Torquay 0
 24 0
 28 0
 
-Rochdale 1
+Rochdale 0
 21 0
 6 0
 8 0
@@ -45849,7 +45849,7 @@ Mansfield 0
 24 0
 
 Leyton 0
-Orient 1
+Orient 0
 21 0
 6 0
 6 0
@@ -46102,7 +46102,7 @@ Raith 0
 
 Kilmarnock 0
 0 0
-Dundee 1
+Dundee 0
 United 0
 2 0
 
@@ -46113,15 +46113,15 @@ Celtic 0
 
 Rangers 0
 4 0
-Hibernian 1
+Hibernian 0
 3 0
 
 Division 0
 one 0
 
-Dundee 1
+Dundee 0
 2 0
-Falkirk 1
+Falkirk 0
 0 0
 
 Greenock 0
@@ -46131,11 +46131,11 @@ St 0
 Johnstone 0
 2 0
 
-Postponed 1
+Postponed 0
 : 0
-Airdrieonians 1
+Airdrieonians 0
 v 0
-Clydebank 1
+Clydebank 0
 ( 0
 to 0
 Wednesday 0
@@ -46145,12 +46145,12 @@ East 0
 
 Fife 0
 v 0
-Partick 1
+Partick 0
 , 0
 Stirling 0
 v 0
 St 0
-Mirren 1
+Mirren 0
 ( 0
 to 0
 Tuesday 0
@@ -46161,12 +46161,12 @@ two 0
 
 Livingston 0
 2 0
-Stenhousemuir 1
+Stenhousemuir 0
 1 0
 
-Stranraer 1
+Stranraer 0
 0 0
-Brechin 1
+Brechin 0
 1 0
 
 Division 0
@@ -46175,16 +46175,16 @@ three 0
 Ross 1
 County 0
 4 0
-Montrose 1
+Montrose 0
 4 0
 
-Postponed 1
+Postponed 0
 : 0
-Forfar 1
+Forfar 0
 v 0
-Alloa 1
+Alloa 0
 , 0
-Inverness 1
+Inverness 0
 Thistle 1
 v 0
 Queen 0
@@ -46196,7 +46196,7 @@ Cup 0
 first 0
 round 0
 
-Alloa 1
+Alloa 0
 3 0
 Hawick 1
 1 0
@@ -46207,15 +46207,15 @@ City 0
 Whitehill 1
 3 0
 
-Postponed 1
+Postponed 0
 : 0
 Albion 0
 v 0
-Forfar 1
+Forfar 0
 , 0
 Huntly 1
 v 0
-Clyde 1
+Clyde 0
 ( 0
 both 0
 now 0
@@ -46310,7 +46310,7 @@ Birmingham 0
 Grimsby 0
 0 0
 
-Charlton 1
+Charlton 0
 2 0
 Swindon 0
 0 0
@@ -46370,14 +46370,14 @@ v 0
 Bolton 0
 
 F.A. 0
-Challenge 1
+Challenge 0
 Cup 0
 second 0
 round 0
 
 Barnet 0
 3 0
-Wycombe 1
+Wycombe 0
 3 0
 
 Blackpool 0
@@ -46389,7 +46389,7 @@ Bristol 0
 City 0
 9 0
 St 0
-Albans 1
+Albans 0
 2 0
 
 Cambridge 0
@@ -46398,33 +46398,33 @@ United 0
 Woking 1
 2 0
 
-Carlisle 1
+Carlisle 0
 1 0
-Darlington 1
+Darlington 0
 0 0
 
-Chester 1
+Chester 0
 1 0
 Boston 0
 0 0
 
 Chesterfield 0
 2 0
-Scarborough 1
+Scarborough 0
 0 0
 
 Enfield 1
 1 0
-Peterborough 1
+Peterborough 0
 1 0
 
 Hull 0
 1 0
-Crewe 1
+Crewe 0
 5 0
 
 Leyton 0
-Orient 1
+Orient 0
 1 0
 Stevenage 1
 2 0
@@ -46437,13 +46437,13 @@ Wood 1
 
 Mansfield 0
 0 0
-Stockport 1
+Stockport 0
 3 0
 
 Notts 0
 County 0
 3 0
-Rochdale 1
+Rochdale 0
 1 0
 
 Preston 1
@@ -46454,12 +46454,12 @@ York 0
 Sudbury 1
 Town 0
 1 0
-Brentford 1
+Brentford 0
 3 0
 
 Walsall 0
 1 0
-Burnley 1
+Burnley 0
 1 0
 
 Watford 0
@@ -46470,7 +46470,7 @@ Town 0
 
 Wrexham 0
 2 0
-Scunthorpe 1
+Scunthorpe 0
 2 0
 
 Cardiff 0
@@ -46700,7 +46700,7 @@ Burke 1
 ) 0
 . 0
 
-Conversions 1
+Conversions 0
 : 0
 Burke 1
 ( 0
@@ -46760,7 +46760,7 @@ stated 0
 
 201 0
 Mark 1
-McNulty 0
+McNulty 1
 ( 0
 Zimbabwe 0
 ) 0
@@ -47153,7 +47153,7 @@ Kola 1
 Altin 1
 Haxhi 1
 , 0
-Sokol 1
+Sokol 0
 Prenga 1
 , 0
 Ervin 1
@@ -47204,7 +47204,7 @@ unbeaten 0
 130 0
 to 0
 lead 0
-Victoria 1
+Victoria 0
 's 0
 fightback 0
 in 0
@@ -47213,7 +47213,7 @@ Sheffield 1
 Shield 1
 match 0
 against 0
-Tasmania 1
+Tasmania 0
 on 0
 Saturday 0
 . 0
@@ -47231,7 +47231,7 @@ for 0
 eight 0
 declared 0
 , 0
-Victoria 1
+Victoria 0
 reached 0
 220 0
 for 0
@@ -47370,7 +47370,7 @@ three 0
 for 0
 81 0
 for 0
-Victoria 1
+Victoria 0
 . 0
 
 -DOCSTART- 0
@@ -47403,9 +47403,9 @@ Shield 1
 cricket 0
 match 0
 between 0
-Tasmania 1
+Tasmania 0
 and 0
-Victoria 1
+Victoria 0
 at 0
 Bellerive 1
 Oval 0
@@ -47413,7 +47413,7 @@ on 0
 Saturday 0
 : 0
 
-Tasmania 1
+Tasmania 0
 481 0
 for 0
 eight 0
@@ -47432,7 +47432,7 @@ Young 1
 113 0
 ) 0
 ; 0
-Victoria 1
+Victoria 0
 220 0
 for 0
 three 0
@@ -47562,7 +47562,7 @@ a 0
 rout 0
 as 0
 Hwang 1
-Sun 1
+Sun 0
 Hong 0
 rapidly 0
 added 0
@@ -47685,7 +47685,7 @@ gone 0
 Indonesia 0
 's 0
 Widodo 1
-Putra 1
+Putra 0
 , 0
 who 0
 scored 0
@@ -47784,7 +47784,7 @@ Wabia 1
 11 0
 - 0
 Bima 1
-Sakti 1
+Sakti 0
 ; 0
 12 0
 - 0
@@ -47860,7 +47860,7 @@ Ju 1
 18 0
 - 0
 Hwang 1
-Sun 1
+Sun 0
 Hong 0
 ; 0
 22 0
@@ -47950,11 +47950,11 @@ Aviv 0
 4 0
 
 Ironi 0
-Rishon 1
-Lezion 1
+Rishon 0
+Lezion 0
 1 0
 Maccabi 0
-Herzliya 1
+Herzliya 0
 0 0
 
 Hapoel 0
@@ -48100,8 +48100,8 @@ Jerusalem 0
 13 0
 
 Ironi 0
-Rishon 1
-Lezion 1
+Rishon 0
+Lezion 0
 12 0
 4 0
 1 0
@@ -48121,7 +48121,7 @@ Holon 0
 10 0
 
 Maccabi 0
-Herzliya 1
+Herzliya 0
 12 0
 3 0
 1 0
@@ -48188,7 +48188,7 @@ Saturday 0
 
 United 0
 Arab 0
-Emirates 1
+Emirates 0
 3 0
 Kuwait 0
 2 0
@@ -48248,7 +48248,7 @@ Hoon 1
 5 0
 , 0
 Hwang 1
-Sun 1
+Sun 0
 Hong 0
 7 0
 and 0
@@ -48267,7 +48267,7 @@ Wabia 1
 58 0
 , 0
 Widodo 1
-Putra 1
+Putra 0
 65 0
 
 Attendance 0
@@ -48532,7 +48532,7 @@ DALLAS 0
 9 0
 1/2 0
 
-DENVER 0
+DENVER 1
 5 0
 14 0
 .263 0
@@ -49219,7 +49219,7 @@ for 0
 his 0
 hit 0
 on 0
-Buffalo 1
+Buffalo 0
 Sabres 1
 defenceman 0
 Garry 1
@@ -49249,13 +49249,13 @@ Wednesday 0
 overtime 0
 win 0
 by 0
-Vancouver 1
+Vancouver 0
 after 0
 colliding 0
 with 0
 Galley 1
 in 0
-Buffalo 1
+Buffalo 0
 zone 0
 . 0
 
@@ -49577,7 +49577,7 @@ first 0
 half 0
 , 0
 and 0
-Montenegrin 1
+Montenegrin 0
 striker 0
 Mijatovic 1
 made 0
@@ -49876,7 +49876,7 @@ Barcelona 0
 21 0
 34 0
 
-Deportivo 1
+Deportivo 0
 Coruna 1
 15 0
 9 0
@@ -49907,7 +49907,7 @@ Madrid 0
 27 0
 
 Athletic 1
-Bilbao 1
+Bilbao 0
 15 0
 7 0
 4 0
@@ -49936,7 +49936,7 @@ Valladolid 1
 24 0
 
 Racing 1
-Santander 1
+Santander 0
 15 0
 5 0
 7 0
@@ -49955,7 +49955,7 @@ Vallecano 1
 19 0
 20 0
 
-Valencia 1
+Valencia 0
 15 0
 6 0
 2 0
@@ -50082,7 +50082,7 @@ DUBLIN 0
 1996-12-07 0
 
 Jack 1
-Charlton 1
+Charlton 0
 's 0
 relationship 0
 with 0
@@ -50106,7 +50106,7 @@ their 0
 own 0
 . 0
 
-Charlton 1
+Charlton 0
 , 0
 61 0
 , 0
@@ -50131,7 +50131,7 @@ deputy 0
 Prime 0
 Minister 0
 Dick 1
-Spring 1
+Spring 0
 who 0
 said 0
 the 0
@@ -50142,7 +50142,7 @@ made 0
 in 0
 recognition 0
 of 0
-Charlton 1
+Charlton 0
 's 0
 achievements 0
 as 0
@@ -50244,7 +50244,7 @@ he 0
 added 0
 . 0
 
-Charlton 1
+Charlton 0
 managed 0
 Ireland 0
 for 0

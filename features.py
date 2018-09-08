@@ -24,8 +24,8 @@ class Features():
              "hasBias",     # general bias term across all words. This should be strongly negative
              "isTitle",      # if current word is title
              "noAlphaNum",
-            "hasApostrophe",
-            "hasHyphen",
+             "hasApostrophe",
+             "hasHyphen",
              ]
 
 def add_currword_to_indexer(token, indexer, train_flag):
