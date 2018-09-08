@@ -127,6 +127,8 @@ def train_classifier(ner_exs, dev_exs):
     indexer = init_features(indexer)
     stop_words = get_stop_words()
     all_labels = []
+    static_features = Features()
+    static_feat_list = static_features.feature_list
 
     global train_flag
 
@@ -172,31 +174,6 @@ def train_classifier(ner_exs, dev_exs):
         if epoch % 2 == 0:
             pred = PersonClassifier(sgd.get_final_weights(), indexer)
             evaluate_classifier(dev_exs, pred)
-
-
-
-    # for i in range(len(indexer)):
-        # print(indexer.get_object(i), sgd.get_final_weights()[i])
-
-    static_feat_list = [
-        "isCap",
-        "isNotCap",  # Negative feature for non capitalized words
-        "allCaps",  # allCaps
-        "isPoss",  # is possessive (next token is 's)
-        "isFirstWord",
-        "isInitials",  # Is representing initials: R.W.
-        "isArticle",  # NOT WORKING
-        "beginsWithNum",  # The word begins with numbers
-        "hasNumbers",  # The token contains numbers
-        "endS",  #
-        "hasTitle",  # token is preceded by a title
-        "onlyLetters",  # checks that token only has letters
-        "hasBias",  # general bias term across all words. This should be strongly negative
-        "isTitle",  # if current word is title
-        "noAlphaNum",
-        "hasApostrophe",
-        "hasHyphen",
-    ]
 
     for feat in static_feat_list:
         weight = sgd.access(indexer.get_index(feat, False))
