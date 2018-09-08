@@ -121,12 +121,14 @@ def get_stop_words():
                 stop_words.append(stop)
     return stop_words
 
-def train_classifier(ner_exs):
+def train_classifier(ner_exs, dev_exs):
     # Create an Indexer object to track features, then initialize it with feature set
     indexer = Indexer()
     indexer = init_features(indexer)
     stop_words = get_stop_words()
     all_labels = []
+
+    global train_flag
 
     epoch_count = 200
     alpha = .2
@@ -151,6 +153,7 @@ def train_classifier(ner_exs):
     # initialize a LogisticLoss object. Will need to send it the
     loss = LogisticLoss(indexer)
 
+    train_flag = False
     # print("feature list is {} elements\nlabels is {} elements".format(len(curr_feats), len(all_labels)))
     for epoch in range(epoch_count):
         print('Epoch {}, alpha {}'.format(epoch, alpha))
@@ -168,7 +171,7 @@ def train_classifier(ner_exs):
 
         if epoch % 2 == 0:
             pred = PersonClassifier(sgd.get_final_weights(), indexer)
-            evaluate_classifier(ner_exs, pred)
+            evaluate_classifier(dev_exs, pred)
 
 
 
@@ -252,7 +255,6 @@ def predict_write_output_to_file(exs, classifier, outfile):
         f.write("\n")
     f.close()
 
-
 def main():
     start_time = time.time()  # saves start time for calculation of running time
     args = _parse_args()  # _parse_args() uses argparse to determine constraints (such as model to run)
@@ -267,7 +269,7 @@ def main():
     #     classifier = train_count_based_binary_classifier(train_class_exs)
     # else:
     #     classifier = train_classifier(train_class_exs)
-    classifier = train_classifier(train_class_exs)
+    classifier = train_classifier(train_class_exs, dev_class_exs)
 
     print("Data reading and training took %f seconds" % (time.time() - start_time))
     # Evaluate on training, development, and test data
