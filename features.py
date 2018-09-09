@@ -26,7 +26,8 @@ class Features():
              "noAlphaNum",
              "hasApostrophe",
              "hasHyphen",
-
+            # "prev_NumbersOnly",
+            # "next_NumbersOnly",
              ]
 
 def add_currword_to_indexer(token, indexer, train_flag):
@@ -70,7 +71,7 @@ def get_applicable_feats(sentence, stop_words, indexer, curr_feats, train_flag):
         add_or_not = not (indexer.contains(token)) and train_flag
         feats_per_word = maybe_add_feature(feats_per_word, indexer, add_or_not, token)
 
-        # TODO: If next/prev token is only numbers, put it into a separate category and don't create a unique feature.
+        #  If next/prev token is only numbers, put it into a separate category and don't create a unique feature.
         # Add features for context words (previous word and next word for every current token)
         # Check the bounds
         if i > 0:
@@ -83,31 +84,6 @@ def get_applicable_feats(sentence, stop_words, indexer, curr_feats, train_flag):
             next_word = "next_{}".format(sentence[i + 1].lower())
             add_or_not = not (indexer.contains(next_word)) and train_flag
             feats_per_word = maybe_add_feature(feats_per_word, indexer, add_or_not, next_word)
-
-        # # Check the last letter of the word
-        # endletter = token[-1]
-        # #
-        # if indexer.contains("ends_{}".format(endletter)):
-        #     add_endletter = False
-        # else:
-        #     # If indexer doesn't contain the ending letter, only add it if the training flag is set to True
-        #     add_endletter = train_flag
-        # feats_per_word = maybe_add_feature(feats_per_word, indexer, add_endletter, "ends_{}".format(endletter))
-        #
-        # # Check the last letter of the word
-        # try:
-        #     startletter = token[0]
-        # #
-        #     if indexer.contains("starts_{}".format(endletter)):
-        #         add_startletter = False
-        #     else:
-        #         # If indexer doesn't contain the starting letter, only add it if the training flag is set to True
-        #         add_startletter = train_flag
-        #     feats_per_word = maybe_add_feature(feats_per_word, indexer, add_startletter, "starts_{}".format(startletter))
-        # except IndexError as e:
-        #     # index error could occur if token is empty string?
-        #     # In this case, ignore the token and move on
-        #     pass
 
         # NOTE: FIRST WORD OF LIST IS THE TOKEN
         feats_per_word = maybe_add_feature(feats_per_word, indexer, False, token)
@@ -176,6 +152,12 @@ def get_applicable_feats(sentence, stop_words, indexer, curr_feats, train_flag):
 
     # return the appended curr_feats list
     return curr_feats
+
+def only_num(token):
+    numonlypattern = re.compile(r"^[0-9]+$")
+    if re.search(numonlypattern, token):
+        return True
+    else: return False
 
 
 def starts_with_num(token):

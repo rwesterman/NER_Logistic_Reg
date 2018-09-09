@@ -6,18 +6,9 @@ import time
 from nerdata import *
 from utils import *
 from optimizers import *
-import re
-from collections import defaultdict
 from features import *
-from pprint import pprint
 
 import numpy as np
-
-# Todo: Try changing learning rate
-# Todo: Try implementing POS tagging
-# NLTK dataset to get POS dataset. Build up a dictionary that has the token as key, and POS as value for every token in the vocabulary
-# Don't add Proper Noun's as a feature, but divide nouns vs everything else as two features (maybe plural nouns as well?)
-# Todo: Walk through code to make sure all of my math is correct
 
 train_flag = True
 
@@ -121,19 +112,17 @@ def get_stop_words():
                 stop_words.append(stop)
     return stop_words
 
-def train_classifier(ner_exs, dev_exs):
+def train_classifier(ner_exs):
     # Create an Indexer object to track features, then initialize it with feature set
     indexer = Indexer()
     indexer = init_features(indexer)
     stop_words = get_stop_words()
     all_labels = []
-    static_features = Features()
-    static_feat_list = static_features.feature_list
 
     global train_flag
 
-    epoch_count = 30
-    alpha = .2
+    epoch_count = 17
+    alpha = .1
 
     # Do all featurization here, before the training loops...
     curr_feats = []
@@ -148,20 +137,15 @@ def train_classifier(ner_exs, dev_exs):
         # important to do this at sentence level because some features depend on other words in sentence
         curr_feats = get_applicable_feats(tokens, stop_words, indexer, curr_feats, train_flag)
 
-    # initialize SGDoptimizer with random weights and 0.1 learning rate
-
-
     sgd = SGDOptimizer(np.zeros(len(indexer)), alpha)
-    adagrad = L1RegularizedAdagradTrainer(np.zeros(len(indexer)))
 
-
-    # initialize a LogisticLoss object. Will need to send it the
+    # initialize a LogisticLoss object with the completed indexer
     loss = LogisticLoss(indexer)
 
     train_flag = False
-    # print("feature list is {} elements\nlabels is {} elements".format(len(curr_feats), len(all_labels)))
     for epoch in range(epoch_count):
-        print('Epoch {}, alpha {}'.format(epoch, alpha))
+        print('Running training epoch {}'.format(epoch))
+
         for index, feat_index in enumerate(curr_feats):
             # get current weights
             weights = sgd.weights
@@ -171,40 +155,10 @@ def train_classifier(ner_exs, dev_exs):
             gradient = loss.calculate_gradient(all_labels[index], feat_index, weights)
 
             # plug into gradient update and update weights
-            sgd.apply_gradient_update(gradient, alpha)
-            # adagrad.apply_gradient_update(gradient, 1)
-        alpha = alpha - (alpha/(1.2*epoch_count))
-
-
-        if epoch % 2 == 0:
-            pred = PersonClassifier(sgd.get_final_weights(), indexer)
-            # pred = PersonClassifier(adagrad.get_final_weights(), indexer)
-            with open("Epoch_F1_Tracking.txt", "a") as f:
-                f.write("Epoch {} -- ".format(epoch))
-            evaluate_classifier(dev_exs, pred)
-
-    #
-    # for feat in static_feat_list:
-    #     weight = sgd.access(indexer.get_index(feat, False))
-    #     # weight = adagrad.access(indexer.get_index(feat, False))
-    #     print("{} => {}".format(feat, weight))
-
-    for i, weight in enumerate(sgd.get_final_weights()):
-        if weight < -2 or weight > 2:
-            temp_feat = indexer.get_object(i)
-            if "next_" in temp_feat or "prev_" in temp_feat or "ends_" in temp_feat or "starts_" in temp_feat:
-                print("{} => {}".format(temp_feat, weight))
+            sgd.apply_gradient_update(gradient, 1, None)
 
     pred = PersonClassifier(sgd.get_final_weights(), indexer)
-    # pred = PersonClassifier(adagrad.get_final_weights(), indexer)
     return pred
-
-def sigmoid(z):
-    """Implement logistic regression here. Takes two numpy arrays, calculates their dot product,
-    and plugs it into sigmoid formula"""
-    # z = np.dot(weights, inputs)
-    out = np.exp(z)/(1+np.exp(z))
-    return out
 
 def evaluate_classifier(exs, classifier):
     num_correct = 0
@@ -212,16 +166,11 @@ def evaluate_classifier(exs, classifier):
     num_pred = 0
     num_gold = 0
     num_total = 0
-    # with open("Wrong_Predictions.txt", "w") as f:
-    #     f.write("Incorrect Predictions\n")
-    #     f.write("=====================\n")
     for ex in exs:
         for idx in range(0, len(ex)):
             prediction = classifier.predict(ex.tokens, idx)
             if prediction == ex.labels[idx]:
                 num_correct += 1
-            # else:
-                # f.write("{} wrong prediction is {}\n".format(ex.tokens[idx], prediction))
             if prediction == 1:
                 num_pred += 1
             if ex.labels[idx] == 1:
@@ -236,8 +185,6 @@ def evaluate_classifier(exs, classifier):
     print("Precision: %i / %i = %f" % (num_pos_correct, num_pred, prec))
     print("Recall: %i / %i = %f" % (num_pos_correct, num_gold, rec))
     print("F1: %f" % f1)
-    with open("Epoch_F1_Tracking.txt", "a") as f:
-        f.write("F1: {}\n".format(f1))
 
 # Runs prediction on exs and writes the outputs to outfile, one token per line
 def predict_write_output_to_file(exs, classifier, outfile):
@@ -259,11 +206,10 @@ def main():
     dev_class_exs = list(transform_for_classification(read_data(args.dev_path)))
 
     # Train the model
-    # if args.model == "BAD":
-    #     classifier = train_count_based_binary_classifier(train_class_exs)
-    # else:
-    #     classifier = train_classifier(train_class_exs)
-    classifier = train_classifier(train_class_exs, dev_class_exs)
+    if args.model == "BAD":
+        classifier = train_count_based_binary_classifier(train_class_exs)
+    else:
+        classifier = train_classifier(train_class_exs)
 
     print("Data reading and training took %f seconds" % (time.time() - start_time))
     # Evaluate on training, development, and test data
@@ -282,7 +228,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    # indexer = Indexer()
-    # curr_feats = get_applicable_feats("Bill is Bill".split(" "), get_stop_words(), indexer, [])
-    # print(curr_feats)
-    # print(indexer)
