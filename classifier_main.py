@@ -12,17 +12,24 @@ import numpy as np
 
 train_flag = True
 
+
 # Command-line arguments to the system -- you can extend these if you want, but you shouldn't need to modify any of them
 def _parse_args():
     parser = argparse.ArgumentParser(description='trainer.py')
     parser.add_argument('--model', type=str, default='BAD', help='model to run (BAD, CLASSIFIER)')
-    parser.add_argument('--train_path', type=str, default='data/eng.train', help='path to train set (you should not need to modify)')
-    parser.add_argument('--dev_path', type=str, default='data/eng.testa', help='path to dev set (you should not need to modify)')
-    parser.add_argument('--blind_test_path', type=str, default='data/eng.testb.blind', help='path to dev set (you should not need to modify)')
-    parser.add_argument('--test_output_path', type=str, default='eng.testb.out', help='output path for test predictions')
-    parser.add_argument('--no_run_on_test', dest='run_on_test', default=True, action='store_false', help='skip printing output on the test set')
+    parser.add_argument('--train_path', type=str, default='data/eng.train',
+                        help='path to train set (you should not need to modify)')
+    parser.add_argument('--dev_path', type=str, default='data/eng.testa',
+                        help='path to dev set (you should not need to modify)')
+    parser.add_argument('--blind_test_path', type=str, default='data/eng.testb.blind',
+                        help='path to dev set (you should not need to modify)')
+    parser.add_argument('--test_output_path', type=str, default='eng.testb.out',
+                        help='output path for test predictions')
+    parser.add_argument('--no_run_on_test', dest='run_on_test', default=True, action='store_false',
+                        help='skip printing output on the test set')
     args = parser.parse_args()
     return args
+
 
 # Wrapper for an example of the person binary classification task.
 # tokens: list of string words
@@ -47,6 +54,7 @@ def transform_for_classification(ner_exs):
         # Yield a PersonExample object with a list of tokens and labels
         yield PersonExample([tok.word for tok in labeled_sent.tokens], labels)
 
+
 # Person classifier that takes counts of how often a word was observed to be the positive and negative class
 # in training, and classifies as positive any tokens which are observed to be positive more than negative.
 # Unknown tokens or ties default to negative.
@@ -61,6 +69,7 @@ class CountBasedPersonClassifier(object):
             return 1
         else:
             return 0
+
 
 # "Trains" the count-based person classifier by collecting counts over the given examples.
 def train_count_based_binary_classifier(ner_exs):
@@ -100,7 +109,9 @@ class PersonClassifier(object):
         value = self.loss.sigmoid(self.feature_list[idx], self.weights)
         if value > 0.5:
             return 1
-        else: return 0
+        else:
+            return 0
+
 
 def get_stop_words():
     stop_words = []
@@ -111,6 +122,7 @@ def get_stop_words():
             if stop != "":
                 stop_words.append(stop)
     return stop_words
+
 
 def train_classifier(ner_exs):
     # Create an Indexer object to track features, then initialize it with feature set
@@ -150,15 +162,16 @@ def train_classifier(ner_exs):
             # get current weights
             weights = sgd.weights
 
-            #labels[index] is the correct label for each token, since the key is the position of the
+            # labels[index] is the correct label for each token, since the key is the position of the
             # token in the sentence. feat_index is the list of features (in strings) for the given token
             gradient = loss.calculate_gradient(all_labels[index], feat_index, weights)
 
             # plug into gradient update and update weights
-            sgd.apply_gradient_update(gradient, 1, None)
+            sgd.apply_gradient_update(gradient, 1)
 
     pred = PersonClassifier(sgd.get_final_weights(), indexer)
     return pred
+
 
 def evaluate_classifier(exs, classifier):
     num_correct = 0
@@ -181,10 +194,11 @@ def evaluate_classifier(exs, classifier):
     print("Accuracy: %i / %i = %f" % (num_correct, num_total, float(num_correct) / num_total))
     prec = float(num_pos_correct) / num_pred if num_pred > 0 else 0.0
     rec = float(num_pos_correct) / num_gold if num_gold > 0 else 0.0
-    f1 = 2 * prec * rec/(prec + rec) if prec > 0 and rec > 0 else 0.0
+    f1 = 2 * prec * rec / (prec + rec) if prec > 0 and rec > 0 else 0.0
     print("Precision: %i / %i = %f" % (num_pos_correct, num_pred, prec))
     print("Recall: %i / %i = %f" % (num_pos_correct, num_gold, rec))
     print("F1: %f" % f1)
+
 
 # Runs prediction on exs and writes the outputs to outfile, one token per line
 def predict_write_output_to_file(exs, classifier, outfile):
@@ -195,6 +209,7 @@ def predict_write_output_to_file(exs, classifier, outfile):
             f.write(ex.tokens[idx] + " " + repr(int(prediction)) + "\n")
         f.write("\n")
     f.close()
+
 
 def main():
     start_time = time.time()  # saves start time for calculation of running time

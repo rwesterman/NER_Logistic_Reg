@@ -184,6 +184,7 @@ def maybe_add_feature(feats, feature_indexer, add_to_indexer, feat):
             feats.append(feat_idx)
         return feats
 
+
 # Computes the dot product over a list of features (i.e., a sparse feature vector)
 # and a weight vector (numpy array)
 def score_indexed_features(feats, weights):
@@ -236,6 +237,7 @@ def test_beam():
     beam.add("e", 8)
     beam.add("f", 6.5)
     print("Should contain e, b, f, c, a: %s" % beam)
+
 
 if __name__ == '__main__':
     test_counter()

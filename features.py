@@ -3,37 +3,34 @@ import re
 from collections import defaultdict
 import numpy as np
 
+
 # Todo: ADD BIAS TERM!!!
 
 class Features():
     def __init__(self):
         self.feature_list = [
-             "isCap",  # is a Capitalized word
-             "isNotCap",  # Negative feature for non capitalized words
-             "allCaps",     # allCaps
-             # "isPoss",  # is possessive (next token is 's)
-             "isFirstWord",  # is the first word in the sentence
-             # "hasPronoun",  # is a pronoun?? or sentence has a pronoun
-             "isInitials",  # Is representing initials: R.W.
-             "isArticle",  # NOT WORKING
-             "beginsWithNum",  # The word begins with numbers
-             "hasNumbers",  # The token contains numbers
-             "endS",        #
-             "hasTitle",     # token is preceded by a title
-             "onlyLetters",  # checks that token only has letters
-             "hasBias",     # general bias term across all words. This should be strongly negative
-             "isTitle",      # if current word is title
-             "noAlphaNum",
-             "hasApostrophe",
-             "hasHyphen",
+            "isCap",  # is a Capitalized word
+            "isNotCap",  # Negative feature for non capitalized words
+            "allCaps",  # allCaps
+            # "isPoss",  # is possessive (next token is 's)
+            "isFirstWord",  # is the first word in the sentence
+            # "hasPronoun",  # is a pronoun?? or sentence has a pronoun
+            "isInitials",  # Is representing initials: R.W.
+            "isArticle",  # NOT WORKING
+            "beginsWithNum",  # The word begins with numbers
+            "hasNumbers",  # The token contains numbers
+            "endS",  #
+            "hasTitle",  # token is preceded by a title
+            "onlyLetters",  # checks that token only has letters
+            "hasBias",  # general bias term across all words. This should be strongly negative
+            "isTitle",  # if current word is title
+            "noAlphaNum",
+            "hasApostrophe",
+            "hasHyphen",
             # "prev_NumbersOnly",
             # "next_NumbersOnly",
-             ]
+        ]
 
-def add_currword_to_indexer(token, indexer, train_flag):
-    add_or_not = not(indexer.contains(token)) and train_flag
-    maybe_add_feature([], indexer, add_or_not, token)
-    return indexer
 
 def init_features(indexer):
     features = Features()
@@ -44,6 +41,7 @@ def init_features(indexer):
         # use the maybe_add_feature() function to initialize all of the features into the indexer
         feats = maybe_add_feature(feats, indexer, True, feature)
     return indexer
+
 
 def get_applicable_feats(sentence, stop_words, indexer, curr_feats, train_flag):
     """
@@ -76,7 +74,7 @@ def get_applicable_feats(sentence, stop_words, indexer, curr_feats, train_flag):
         # Check the bounds
         if i > 0:
             # Do similar for context words immediately surrounding it. ("prevWord", "nextWord")
-            prev_word = "prev_{}".format(sentence[i-1].lower())
+            prev_word = "prev_{}".format(sentence[i - 1].lower())
             add_or_not = not (indexer.contains(prev_word)) and train_flag
             feats_per_word = maybe_add_feature(feats_per_word, indexer, add_or_not, prev_word)
 
@@ -124,7 +122,7 @@ def get_applicable_feats(sentence, stop_words, indexer, curr_feats, train_flag):
                 feats_per_word = maybe_add_feature(feats_per_word, indexer, False, "isPoss")
 
         if i > 0:
-            if sentence[i-1].lower() in titles:
+            if sentence[i - 1].lower() in titles:
                 feats_per_word = maybe_add_feature(feats_per_word, indexer, False, "hasTitle")
 
         if token.lower() in titles:
@@ -153,11 +151,13 @@ def get_applicable_feats(sentence, stop_words, indexer, curr_feats, train_flag):
     # return the appended curr_feats list
     return curr_feats
 
+
 def only_num(token):
     numonlypattern = re.compile(r"^[0-9]+$")
     if re.search(numonlypattern, token):
         return True
-    else: return False
+    else:
+        return False
 
 
 def starts_with_num(token):
@@ -167,12 +167,14 @@ def starts_with_num(token):
     else:
         return False
 
+
 def contains_num(token):
     numpattern = re.compile(r"[0-9]+")
     if re.search(numpattern, token):
         return True
     else:
         return False
+
 
 def check_initials(token):
     initials = re.compile(r"[A-Z][.]")
@@ -181,6 +183,7 @@ def check_initials(token):
     else:
         return False
 
+
 def only_letters(token):
     letters = re.compile(r"^[a-zA-Z]$")
     if re.search(letters, token):
@@ -188,9 +191,11 @@ def only_letters(token):
     else:
         return False
 
+
 def no_word_match(token):
     """Only matches tokens that do not match alphanumeric characters"""
     search = re.compile(r"^\W+$")
     if re.search(search, token):
         return True
-    else: return False
+    else:
+        return False
