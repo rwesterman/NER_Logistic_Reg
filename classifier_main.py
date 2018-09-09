@@ -132,7 +132,7 @@ def train_classifier(ner_exs, dev_exs):
 
     global train_flag
 
-    epoch_count = 1000
+    epoch_count = 30
     alpha = .2
 
     # Do all featurization here, before the training loops...
@@ -150,7 +150,10 @@ def train_classifier(ner_exs, dev_exs):
 
     # initialize SGDoptimizer with random weights and 0.1 learning rate
 
+
     sgd = SGDOptimizer(np.zeros(len(indexer)), alpha)
+    adagrad = L1RegularizedAdagradTrainer(np.zeros(len(indexer)))
+
 
     # initialize a LogisticLoss object. Will need to send it the
     loss = LogisticLoss(indexer)
@@ -159,29 +162,41 @@ def train_classifier(ner_exs, dev_exs):
     # print("feature list is {} elements\nlabels is {} elements".format(len(curr_feats), len(all_labels)))
     for epoch in range(epoch_count):
         print('Epoch {}, alpha {}'.format(epoch, alpha))
-        for index, feat_list in enumerate(curr_feats):
+        for index, feat_index in enumerate(curr_feats):
             # get current weights
             weights = sgd.weights
 
             #labels[index] is the correct label for each token, since the key is the position of the
-            # token in the sentence. feat_list is the list of features (in strings) for the given token
-            gradient = loss.calculate_gradient(all_labels[index], feat_list, weights)
+            # token in the sentence. feat_index is the list of features (in strings) for the given token
+            gradient = loss.calculate_gradient(all_labels[index], feat_index, weights)
 
             # plug into gradient update and update weights
             sgd.apply_gradient_update(gradient, alpha)
-        alpha = alpha - (.1/(2*epoch_count))
+            # adagrad.apply_gradient_update(gradient, 1)
+        alpha = alpha - (alpha/(1.2*epoch_count))
+
 
         if epoch % 2 == 0:
             pred = PersonClassifier(sgd.get_final_weights(), indexer)
+            # pred = PersonClassifier(adagrad.get_final_weights(), indexer)
             with open("Epoch_F1_Tracking.txt", "a") as f:
                 f.write("Epoch {} -- ".format(epoch))
             evaluate_classifier(dev_exs, pred)
 
-    for feat in static_feat_list:
-        weight = sgd.access(indexer.get_index(feat, False))
-        print("{} => {}".format(feat, weight))
+    #
+    # for feat in static_feat_list:
+    #     weight = sgd.access(indexer.get_index(feat, False))
+    #     # weight = adagrad.access(indexer.get_index(feat, False))
+    #     print("{} => {}".format(feat, weight))
+
+    for i, weight in enumerate(sgd.get_final_weights()):
+        if weight < -2 or weight > 2:
+            temp_feat = indexer.get_object(i)
+            if "next_" in temp_feat or "prev_" in temp_feat or "ends_" in temp_feat or "starts_" in temp_feat:
+                print("{} => {}".format(temp_feat, weight))
 
     pred = PersonClassifier(sgd.get_final_weights(), indexer)
+    # pred = PersonClassifier(adagrad.get_final_weights(), indexer)
     return pred
 
 def sigmoid(z):

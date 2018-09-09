@@ -11,14 +11,14 @@ class Features():
              "isCap",  # is a Capitalized word
              "isNotCap",  # Negative feature for non capitalized words
              "allCaps",     # allCaps
-             "isPoss",  # is possessive (next token is 's)
+             # "isPoss",  # is possessive (next token is 's)
              "isFirstWord",  # is the first word in the sentence
              # "hasPronoun",  # is a pronoun?? or sentence has a pronoun
              "isInitials",  # Is representing initials: R.W.
              "isArticle",  # NOT WORKING
              "beginsWithNum",  # The word begins with numbers
              "hasNumbers",  # The token contains numbers
-             # "endS",        #
+             "endS",        #
              "hasTitle",     # token is preceded by a title
              "onlyLetters",  # checks that token only has letters
              "hasBias",     # general bias term across all words. This should be strongly negative
@@ -26,6 +26,7 @@ class Features():
              "noAlphaNum",
              "hasApostrophe",
              "hasHyphen",
+
              ]
 
 def add_currword_to_indexer(token, indexer, train_flag):
@@ -67,88 +68,109 @@ def get_applicable_feats(sentence, stop_words, indexer, curr_feats, train_flag):
         # Add the token itself to the indexer if it's not already present and this is a training run
         # This will help track how often a particular word shows up.
         add_or_not = not (indexer.contains(token)) and train_flag
-        maybe_add_feature([], indexer, add_or_not, token)
+        feats_per_word = maybe_add_feature(feats_per_word, indexer, add_or_not, token)
 
+        # TODO: If next/prev token is only numbers, put it into a separate category and don't create a unique feature.
+        # Add features for context words (previous word and next word for every current token)
         # Check the bounds
-        # Trying Bigrams here as well
         if i > 0:
             # Do similar for context words immediately surrounding it. ("prevWord", "nextWord")
-            add_or_not = not(indexer.contains(sentence[i-1])) and train_flag
-            prev_word = "prev{}".format(sentence[i-1].lower())
-            maybe_add_feature([], indexer, add_or_not, prev_word)
-
-
-
+            prev_word = "prev_{}".format(sentence[i-1].lower())
+            add_or_not = not (indexer.contains(prev_word)) and train_flag
+            feats_per_word = maybe_add_feature(feats_per_word, indexer, add_or_not, prev_word)
 
         if i + 1 < len(sentence):
-            add_or_not = not (indexer.contains(sentence[i + 1])) and train_flag
-            next_word = "next{}".format(sentence[i + 1].lower())
-            maybe_add_feature([], indexer, add_or_not, next_word)
+            next_word = "next_{}".format(sentence[i + 1].lower())
+            add_or_not = not (indexer.contains(next_word)) and train_flag
+            feats_per_word = maybe_add_feature(feats_per_word, indexer, add_or_not, next_word)
 
-
+        # # Check the last letter of the word
+        # endletter = token[-1]
+        # #
+        # if indexer.contains("ends_{}".format(endletter)):
+        #     add_endletter = False
+        # else:
+        #     # If indexer doesn't contain the ending letter, only add it if the training flag is set to True
+        #     add_endletter = train_flag
+        # feats_per_word = maybe_add_feature(feats_per_word, indexer, add_endletter, "ends_{}".format(endletter))
+        #
+        # # Check the last letter of the word
+        # try:
+        #     startletter = token[0]
+        # #
+        #     if indexer.contains("starts_{}".format(endletter)):
+        #         add_startletter = False
+        #     else:
+        #         # If indexer doesn't contain the starting letter, only add it if the training flag is set to True
+        #         add_startletter = train_flag
+        #     feats_per_word = maybe_add_feature(feats_per_word, indexer, add_startletter, "starts_{}".format(startletter))
+        # except IndexError as e:
+        #     # index error could occur if token is empty string?
+        #     # In this case, ignore the token and move on
+        #     pass
 
         # NOTE: FIRST WORD OF LIST IS THE TOKEN
-        feats_per_word.append(token)
+        feats_per_word = maybe_add_feature(feats_per_word, indexer, False, token)
 
         # next element is bias
-        feats_per_word.append("hasBias")
+        feats_per_word = maybe_add_feature(feats_per_word, indexer, False, "hasBias")
 
         # Check if token is first word of sentence
         if i == 0:
-            feats_per_word.append("isFirstWord")
+            feats_per_word = maybe_add_feature(feats_per_word, indexer, False, "isFirstWord")
 
         # Check capitalization:
         if token.istitle():
-            feats_per_word.append("isCap")
+            feats_per_word = maybe_add_feature(feats_per_word, indexer, False, "isCap")
         elif token.isupper():
-            feats_per_word.append("allCaps")
+            feats_per_word = maybe_add_feature(feats_per_word, indexer, False, "allCaps")
         else:
-            feats_per_word.append("isNotCap")
+            feats_per_word = maybe_add_feature(feats_per_word, indexer, False, "isNotCap")
 
         # Check if the word is an article
         if token.lower() in articles:
-            feats_per_word.append("isArticle")
+            feats_per_word = maybe_add_feature(feats_per_word, indexer, False, "isArticle")
 
         # Check if token starts with numbers, or else if it has numbers at all
         if starts_with_num(token):
             # if the token begins with a number, then it also "hasNumbers", so add both
-            feats_per_word.append("hasNumbers")
-            feats_per_word.append("beginsWithNum")
+            feats_per_word = maybe_add_feature(feats_per_word, indexer, False, "hasNumbers")
+            feats_per_word = maybe_add_feature(feats_per_word, indexer, False, "beginsWithNum")
         elif contains_num(token):
             # If the token doesn't begin with a number, it might still contain a number, so check that independently
-            feats_per_word.append("hasNumbers")
+            feats_per_word = maybe_add_feature(feats_per_word, indexer, False, "hasNumbers")
 
         # check if the next token is "'s", if so mark current token as possessive
         # Make sure current token isn't the last token in the sentence before testing
         if i + 1 < len(sentence):
             # If following token is "'s", then the current token is possessive
             if sentence[i + 1].lower() == "'s":
-                feats_per_word.append("isPoss")
+                feats_per_word = maybe_add_feature(feats_per_word, indexer, False, "isPoss")
 
         if i > 0:
             if sentence[i-1].lower() in titles:
-                feats_per_word.append("hasTitle")
+                feats_per_word = maybe_add_feature(feats_per_word, indexer, False, "hasTitle")
 
         if token.lower() in titles:
-            feats_per_word.append("isTitle")
+            feats_per_word = maybe_add_feature(feats_per_word, indexer, False, "isTitle")
 
         if check_initials(token):
-            feats_per_word.append("isInitials")
+            feats_per_word = maybe_add_feature(feats_per_word, indexer, False, "isInitials")
 
         if token.lower()[-1] == "s":
-            feats_per_word.append("endS")
+            feats_per_word = maybe_add_feature(feats_per_word, indexer, False, "endS")
 
         if only_letters(token):
-            feats_per_word.append("onlyLetters")
+            feats_per_word = maybe_add_feature(feats_per_word, indexer, False, "onlyLetters")
 
         if no_word_match(token):
-            feats_per_word.append("noAlphaNum")
+            feats_per_word = maybe_add_feature(feats_per_word, indexer, False, "noAlphaNum")
 
         if "-" in token:
-            feats_per_word.append("hasHyphen")
+            feats_per_word = maybe_add_feature(feats_per_word, indexer, False, "hasHyphen")
 
         if "'" in token:
-            feats_per_word.append("hasApostrophe")
+            feats_per_word = maybe_add_feature(feats_per_word, indexer, False, "hasApostrophe")
 
         curr_feats.append(feats_per_word)
 

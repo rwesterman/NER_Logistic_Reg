@@ -3,6 +3,8 @@
 import utils
 from abc import ABC, abstractmethod
 import numpy as np
+import time
+from utils import Counter
 
 
 class LogisticLoss():
@@ -12,20 +14,20 @@ class LogisticLoss():
         # indexer is an Indexer object with features initialized. This is mostly used to get correct length for weight vector
         self.indexer = indexer
 
-    def update_indexer(self, indexer):
-        self.indexer = indexer
+    # def update_indexer(self, indexer):
+    #     self.indexer = indexer
 
-    def features_to_index(self, feat_list):
-        """
-        :param feat_list: list of strings representing features of a single token (first element is token string itself)
-        :return: list of integers representing the index of applicable features
-        """
-        feat_index = []
-        for i, feature in enumerate(feat_list):
-            # Don't need to skip token value because it won't show up in indexer and therefore won't get added
-            feat_index = utils.maybe_add_feature(feat_index, self.indexer, False, feature)
-
-        return feat_index
+    # def features_to_index(self, feat_list):
+    #     """
+    #     :param feat_list: list of strings representing features of a single token (first element is token string itself)
+    #     :return: list of integers representing the index of applicable features
+    #     """
+    #     feat_index = []
+    #     for i, feature in enumerate(feat_list):
+    #         # Don't need to skip token value because it won't show up in indexer and therefore won't get added
+    #         feat_index = utils.maybe_add_feature(feat_index, self.indexer, False, feature)
+    #
+    #     return feat_index
 
     def get_scores(self, feat_index, weights):
         # Todo: Fill this in based on get_scores_from_features function
@@ -36,33 +38,33 @@ class LogisticLoss():
         score = utils.score_indexed_features(feat_index, weights)
         return score
 
-    def sigmoid(self, feat_list, weights):
+    def sigmoid(self, feat_index, weights):
         """Implement logistic regression here. Takes two numpy arrays, calculates their dot product,
             and plugs it into sigmoid formula"""
         # z = np.dot(weights, inputs)
-        feat_index = self.features_to_index(feat_list)
+        # feat_index = self.features_to_index(feat_list)
         z = self.get_scores(feat_index, weights)
         sig_val = np.exp(z) / (1 + np.exp(z))
         return sig_val
 
 
     # takes in label value, list of features, and weights. Calculates and returns gradient
-    def calculate_gradient(self, label, token_feat_list, weights):
+    def calculate_gradient(self, label, feat_index, weights):
         # feat_vect does not hold any zero values, but instead it is used to index
         # which features are applicable to a particular word. ie feat_vec == [4,5] means
         # the 4th and 5th features are 1, and all others are 0
+        sig_val = self.sigmoid(feat_index, weights)
 
-        sig_val = self.sigmoid(token_feat_list, weights)
-        feat_index = self.features_to_index(token_feat_list)
+        grad = Counter()
 
         # initialize gradient as a vector the same size as your feature list, and all zero values. Values will be changed where appropraite
-        grad = np.zeros(len(self.indexer))
+        # grad = np.zeros(len(self.indexer))
 
         # The cost function being used is (sigma(wx) - y) where sigma is the logistic value, and y is the correct label
         # This function keeps all values zero except those that have features show up
         for index_val in feat_index:
-            grad[index_val] = (sig_val - label)
-
+            grad.increment_count(index_val, (sig_val-label))
+            # grad[index_val] = (sig_val - label)
         return grad
 
 class Optimizer(ABC):
@@ -109,13 +111,20 @@ class SGDOptimizer(Optimizer):
 
         if alpha is not None:
             self.alpha = alpha
-        self.weights = self.weights - self.alpha * gradient
+        # self.weights = self.weights - self.alpha * gradient
 
-        # for i in gradient.keys():
-        #     g = gradient.get_count(i)
+        # Todo: Create a Counter object to hold the gradient for a single token. Set the corrrect indices (keys?)
+
+        for i in gradient.keys():
+            g = gradient.get_count(i)
         #     # self.weights[i] = self.weights[i] + self.alpha * g
-        #     self.weights[i] = self.weights[i] - self.alpha * g
+            self.weights[i] = self.weights[i] - self.alpha * g
 
+    # Send in a Counter object
+    # Each key in counter object corresponds to a specific feature (create the keys from the feature vector)
+    # The value of each key is the calculated gradient for that specific feature (see gradient calculation in LogisticLoss class)
+    # The apply_gradient function then only has to edit those weights that are changing. This is much faster.
+    # #
 
     # Get the weight of feature i
     def access(self, i):
@@ -170,7 +179,8 @@ class L1RegularizedAdagradTrainer(Optimizer):
             # Apply the regularizer for every iteration since touched
             iters_since_touched = self.curr_iter - self.last_iter_touched[i]
             self.last_iter_touched[i] = self.curr_iter
-            self.weights[i] = np.sign(new_xti) * max(0, np.abs(new_xti) - self.lamb * eta_over_Htii - (iters_since_touched - 1) * self.lamb * old_eta_over_Htii)
+            # self.weights[i] = np.sign(new_xti) * max(0, np.abs(new_xti) - self.lamb * eta_over_Htii - (iters_since_touched - 1) * self.lamb * old_eta_over_Htii)
+            self.weights[i] = np.sign(new_xti) - max(0, np.abs(new_xti) - self.lamb * eta_over_Htii - (iters_since_touched - 1) * self.lamb * old_eta_over_Htii)
 
     # Get the weight of feature i
     def access(self, i):
