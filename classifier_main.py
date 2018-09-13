@@ -16,7 +16,7 @@ train_flag = True
 # Command-line arguments to the system -- you can extend these if you want, but you shouldn't need to modify any of them
 def _parse_args():
     parser = argparse.ArgumentParser(description='trainer.py')
-    parser.add_argument('--model', type=str, default='BAD', help='model to run (BAD, CLASSIFIER)')
+    parser.add_argument('--model', type=str, default='CLASSIFIER', help='model to run (BAD, CLASSIFIER)')
     parser.add_argument('--train_path', type=str, default='data/eng.train',
                         help='path to train set (you should not need to modify)')
     parser.add_argument('--dev_path', type=str, default='data/eng.testa',
